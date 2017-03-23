@@ -6,7 +6,9 @@ In this resource you will use the Google maps API to map open data onto a map us
 
 Open data is data that is made available for public use, for free and without restrictions. All sorts of organisations publish open data, including governments, charities and companies. You can find open data on a wide variety of topics using a search engine.
 
-Lots of cities publish their own open data. For this resource we are going to use some open data published by the city of Nottingham, UK. It is important to respect the license specified by the publisher of the data, and only to use the data for things allowed by the license. For us to be allowed to use this data, Nottingham City Council asks us to provide an acknowledgement to let people know where the data originally came from, and a link to the license, like this:
+Lots of cities publish their own open data. For this resource we are going to use some open data published by the city of Nottingham, UK which helpfully tells us all of the places where people got a fine for leaving dog poo!
+
+ It is important to respect the license specified by the publisher of the data, and only to use the data for things allowed by the license. For us to be allowed to use this data, Nottingham City Council asks us to provide an acknowledgement to let people know where the data originally came from, and a link to the license, like this:
 
 [Fixed Penalty Notices](http://www.opendatanottingham.org.uk/dataset.aspx?id=124), Nottingham City Council, 4th July 2016, licensed under the [Open Government Licence](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)
 
@@ -141,7 +143,7 @@ We need to be able to tell Google Maps which area to show on our map.
 
 Let's add a marker onto our map.
 
-1. Open up the [data web page](http://www.opendatanottingham.org.uk/dataset.aspx?id=124) and click on JSON Fixed Penalty Notices 2016
+1. Open up the [Nottingham Open Data page](http://www.opendatanottingham.org.uk/dataset.aspx?id=124) and click on JSON Fixed Penalty Notices 2016
 
     ![View the JSON data](images/click-on-data.png)
 
@@ -198,7 +200,7 @@ Let's add a marker onto our map.
 
     ![Marker was placed](images/sneinton-road.png)
 
-1. We can make our markers a bit more interesting by animating them and changing the image. Position your cursor immediately after the line of code where you set the position of the marker, and add the following line of code:
+1. We can make our markers a bit more interesting by animating them and changing the image. Position your cursor on a blank line immediately after the line of code where you set the position of the marker, and add the following line of code:
 
     ```html
     animation: google.maps.Animation.DROP,
@@ -206,15 +208,15 @@ Let's add a marker onto our map.
 
 1. Go back to your map in the web browser and refresh the page. You should now see the pin drop from the sky when the map loads!
 
-1. Since we are mapping places where people got fined for leaving dog poo, why don't we change the marker to be a poo emoji instead! You can find lots of emojis at [Wikimedia commons](https://commons.wikimedia.org/wiki/Emoji) . Save a poo emoji into the same folder as your web page, and call it `poop.png`.
+1. Since we are mapping places where people got fined for leaving dog poo, why don't we change the marker to be a poo emoji instead! You can find lots of emojis at [Wikimedia commons](https://commons.wikimedia.org/wiki/Emoji). Save a poo emoji into the same folder as your web page, and call it `poop.png`.
 
-1. Add a line of code immediately before the line that begins `var marker`:
+1. Add a line of code immediately before the line that begins `var marker` to create a variable containing the filename of our poo emoji:
 
     ```JavaScript
     var poo_emoji = 'poop.png';
     ```
 
-1. Now add the following code on the line after your `animation:` inside the section where you create the marker:
+1. Now add the following code on the line after your `animation:` inside the section where you create the marker to set the icon of the marker to be the poo emoji picture:
 
     ```JavaScript
     icon: poo_emoji
@@ -242,13 +244,17 @@ Let's add a marker onto our map.
 
     ![Big poo on Nottingham](images/poo-on-nottingham.png)
 
-    When I did this, the emoji I saved was quite big so it covered the whole of Nottingham with poo (and made me laugh a lot!) If your emoji is too big, you can resize it using an image editing program, or you could download [this one](code/poop.png)
+    When I did this, the emoji I saved was quite big so it covered the whole of Nottingham with poo (and made me laugh a lot!) If your emoji is too big, you can resize it using an image editing program, or you could download and use [this small one](code/poop.png) instead.
 
     ![Small poo on Nottingham](images/small-poo.png)
 
     Phew, that's better!
 
+The full code from this section can be seen [here](code/worksheet1.html)
 
-## Using the data just typed in
+## What's next?
 
-## Read from a json file and map the data
+- Mark more than one piece of data on the map
+- Create a map of a different place and add your own markers
+
+Or, head over to [worksheet 2](worksheet2.md) to find out how to use some more complicated code to automatically add lots of data to your map!
