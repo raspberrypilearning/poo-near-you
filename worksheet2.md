@@ -13,12 +13,15 @@ The open data we found was in a format called JSON (JavaScript Object Notation) 
 1. Open a terminal (Raspberry Pi, Mac) or Command Prompt (Windows):
 
     **Windows**
+
     ![Open a command prompt](images/command-prompt.png)
 
     **Raspberry Pi**
+
     ![Open a terminal on Raspberry Pi](images/terminal.png)
 
     **Mac**
+    
     ![Open a terminal on Mac](images/mac-terminal.png)
 
 
@@ -49,7 +52,7 @@ The open data we found was in a format called JSON (JavaScript Object Notation) 
     ```
 
     **Raspberry Pi and Mac**
-    
+
     ```bash
     python3 -m http.server
     ```
