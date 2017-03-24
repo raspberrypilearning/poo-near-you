@@ -30,20 +30,21 @@
             var incident_location = "Sneinton Road, Nottingham, UK";
 
             geocoder.geocode( { 'address': incident_location }, function(results) {
-                var poo_emoji = 'poop.png';
+                var emoji = 'poop.png';
                 var marker = new google.maps.Marker({
                     map: map,
                     position: results[0].geometry.location,
                     animation: google.maps.Animation.DROP,
-                    icon: poo_emoji
+                    icon: emoji
                 });
 
             });
         }
         </script>
 
+        <!-- Don't forget to add your own API key here or it won't work!! -->
         <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6i-1rKMLpAX97J2b5mVxL403mHISeMDI&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
         </script>
 
     </body>

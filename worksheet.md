@@ -214,13 +214,13 @@ Let's add a marker onto our map.
 1. Add a line of code immediately before the line that begins `var marker` to create a variable containing the filename of our poo emoji:
 
     ```JavaScript
-    var poo_emoji = 'poop.png';
+    var emoji = 'poop.png';
     ```
 
 1. Now add the following code on the line after your `animation:` inside the section where you create the marker to set the icon of the marker to be the poo emoji picture:
 
     ```JavaScript
-    icon: poo_emoji
+    icon: emoji
     ```
 
 1. The full code should now look like this:
@@ -230,12 +230,12 @@ Let's add a marker onto our map.
     var incident_location = "Sneinton Road, Nottingham, UK";
 
     geocoder.geocode( { 'address': incident_location }, function(results) {
-        var poo_emoji = 'poop.png';
+        var emoji = 'poop.png';
         var marker = new google.maps.Marker({
             map: map,
             position: results[0].geometry.location,
             animation: google.maps.Animation.DROP,
-            icon: poo_emoji
+            icon: emoji
         });
 
     });
