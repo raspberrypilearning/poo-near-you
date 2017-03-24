@@ -25,7 +25,7 @@ The open data we found was in a format called JSON (JavaScript Object Notation) 
     ![Open a terminal on Mac](images/mac-terminal.png)
 
 
-1. Change to the directory your web page is saved in by typing `cd` followed by a space, then the path to the directory. An example directory is shown, but you may have saved your web page in a different location, so make sure you use the path to the directory you used.
+1. Change to the directory your web page is saved in by typing `cd` followed by a space, then the path to the directory. An example directory is shown, but you may have saved your web page in a different location, so make sure you use the path to the directory you used. Be careful - Windows uses `\` between directories, but Mac and Raspberry Pi both use `/`.
 
     **Windows**
 
