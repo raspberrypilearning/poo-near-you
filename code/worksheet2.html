@@ -38,12 +38,18 @@
                     if( i == 10 ){ return false; }
 
                     geocoder.geocode( { 'address': incident_location }, function(results, status) {
-                        var poo_emoji = 'poop.png';
+                        var emoji = 'poop.png';
+
+                        if(data[i]["Contravention_Description"].toLowerCase() == "leaving litter"){
+                            emoji = 'litter.png';
+                        }
+
                         var marker = new google.maps.Marker({
                             map: map,
                             position: results[0].geometry.location,
                             animation: google.maps.Animation.DROP,
-                            icon: poo_emoji
+                            icon: emoji,
+                            title: data[i]["Contravention_Description"]
                         });
                     });
                 });

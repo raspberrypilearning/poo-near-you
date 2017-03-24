@@ -112,17 +112,17 @@ You may be curious as to why it is necessary to run a web server - why can't we 
     ```
 
     Here's what this code does:
-    - `var incident_location =` - Create a variable called `incident_location` (this is the same name as the variable we deleted earlier)
-    - `data[i]["Street"]` - The `$getJSON` function gives us the `data` from the JSON file. Each time the `$.each` loop runs, it looks at a new item of data. The item is currently looking at is item `[i]`. From the current item, we want to look specifically at the `["Street"]`
+    - `var incident_location =` - Create a variable called `incident_location` (this is deliberately the same name as the variable we deleted earlier)
+    - `data[i]["Street"]` - The `$getJSON` function gives us the `data` from the JSON file. Each time the `$.each` loop runs, it looks at a new item of data. The item is currently looking at is item `[i]`. From the current data, we want to look specifically at the `["Street"]`
     - `+ ", Nottingham UK"` - We are adding on "Nottingham, UK" to the street name. This is so the Geocoder has a bit more information about the location when it looks it up - for example there may be lots of streets in the UK with the same name, so we need to be specific that we want the one in Nottingham.
 
-1. We will only plot the first 10 items from the data. This is because using the geocoder is "expensive" in computational terms, so Google Maps imposes a quota on how many geocodes you can do per day, and how quickly you can do them. If you attempt to geocode all of the data at once, your code will fail after the first 10 because the requests are too quick for the geocoder API. Add in this block of code immediately after `var incident_location` to tell the page to stop processing after the first 10 results:
+1. We will only plot the first 10 items from the data. This is because using the geocoder is "expensive" in computational terms, so Google Maps has a quota on how many geocodes you can do per day, and how quickly you can do them. If you attempt to geocode all of the data at once, your code will fail after the first 10 because the requests are too quick for the geocoder API and Google stops letting you use the geocoder! Add in this block of code immediately after `var incident_location` to tell the loop to stop after the first 10 results:
 
     ```JavaScript
     if( i == 10 ){ return false; }
     ```
 
-1. Now highlight all of the `geocoder` code. Move this code so that it is immediately after the `var incident_location` line. Your final code should look like this:
+1. Now highlight all of your existing `geocoder` code. Move this code so that it is also inside the curly brackets, immediately after the `if` statement you added in the previous step. Your final code should look like this:
 
     ```JavaScript
     $.getJSON(data_file, function(data){
@@ -151,15 +151,16 @@ You may be curious as to why it is necessary to run a web server - why can't we 
 
 ## Adding more data
 
-1. Now that we have access to all the JSON data, we can also plot some of the other data at each data point. Locate the line `icon: poo_emoji` and add a comma at the end of the line so that we can add another parameter on the line below.
+1. Now that we have access to all the JSON data, we can also plot some of the other data at each data point. Locate the line `icon: emoji` and add a comma at the end of the line so that we can add another parameter on the line below.
 
-1. On the line below, add:
+1. Add a line below to plot the description of the penalty on the data marker too:
 
     ```JavaScript
+    icon: emoji,
     title: data[i]["Contravention_Description"]
     ```
 
-1. Refresh your map. When you hover your mouse over one of the icons, you will see the type of penalty appear
+1. Refresh your map. When you hover your mouse over one of the icons, you will see the type of penalty appear in a tooltip.
 
     ![Leaving litter](images/leaving-litter.png)
 
@@ -170,7 +171,7 @@ You will see that lots of the incidents are not to do with dog poo, they are act
 
 1. Save a suitable emoji image to mark litter being dropped. The emoji should be saved as `litter.png` and it should be saved into the same folder as your webpage. If you want to, you can use [this one](code/litter.png) from [Wikimedia Commons](https://commons.wikimedia.org/wiki/Emoji).
 
-1. Add an if statement to check the type of incident. If it is litter, use the litter emoji, otherwise we will use the default poop emoji.
+1. Add an if statement to check the type of incident. If it is litter, change the variable to use the litter emoji, otherwise we will stick with the default poop emoji.
 
     ```javascript
     if(data[i]["Contravention_Description"].toLowerCase() == "leaving litter"){
@@ -178,11 +179,13 @@ You will see that lots of the incidents are not to do with dog poo, they are act
     }
     ```
 
-    We have converted the `Contravention_Description` to lowercase because some of the descriptions say "Leaving litter" and some say "Leaving Litter". Although a human can understand that these both mean the same thing, the computer thinks they are different. We convert the description to all lowercase and then compare it to the phrase "leaving litter" in all lowercase so that capitalisation doesn't matter.
+    We have converted the `Contravention_Description` to lowercase because some of the descriptions in the data say "Leaving litter" and some say "Leaving Litter". Although a human can understand that these both mean the same thing, the computer thinks they are different. We convert the description to all lowercase and then compare it to the phrase "leaving litter" in all lowercase so that capitalisation doesn't matter.
 
 1. Save your code, then go back to the web browser and refresh the page. You should see two different types of emoji to show different types of incident.
 
-    ![Leaving litter](images/leaving-litter.png)
+    ![Leaving litter](images/multi-emojis.png)
+
+1. The finished code is [here](code/worksheet2.html) for you to have a look at.
 
 ## Why did we need to run a web server?
 
