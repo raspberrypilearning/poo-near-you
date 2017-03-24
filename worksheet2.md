@@ -25,14 +25,17 @@ The open data we found was in a format called JSON (JavaScript Object Notation) 
 1. Change to the directory your web page is saved in by typing `cd` followed by a space, then the path to the directory. An example directory is shown, but you may have saved your web page in a different location, so make sure you use the path to the directory you used.
 
     **Windows**
+
     ![Change to the directory](images/cd-to-directory.png)
 
     **Raspberry Pi**
+
     ```bash
     cd /home/pi/googlemaps
     ```
 
     **Mac**
+
     ```bash
     cd Documents/googlemaps
     ```
@@ -40,11 +43,13 @@ The open data we found was in a format called JSON (JavaScript Object Notation) 
 1. Type the following command to start the web server, which will serve files from the directory you were in when you started it.
 
     **Windows**
+
     ```bash
     python -m http.server
     ```
 
     **Raspberry Pi and Mac**
+    
     ```bash
     python3 -m http.server
     ```

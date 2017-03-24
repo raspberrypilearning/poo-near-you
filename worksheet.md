@@ -110,6 +110,7 @@ We need to be able to tell Google Maps which area to show on our map.
 1. Add the following code to create a `<div>` (an invisible box) where your map will eventually appear:
 
     ```html
+    My Google map
     <div id="map"></div>
     ```
 
