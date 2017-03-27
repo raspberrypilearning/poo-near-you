@@ -63,7 +63,7 @@ The open data we found was in a format called JSON (JavaScript Object Notation) 
 
     ![Served page with map](images/local-server-map.png)
 
-You may be curious as to why it is necessary to run a web server - why can't we just carry on looking at the web page as we did in worksheet 1? The explanation for why this is necessary is at the end of this worksheet.
+You may be curious as to why it is necessary to run a web server. Why can't we just carry on looking at the web page as we did in worksheet 1? The explanation for why this is necessary is at the end of this worksheet.
 
 ## Read the JSON data and plot it on the map
 
