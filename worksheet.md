@@ -1,14 +1,14 @@
 # Poo near you
 
-In this resource you will use the Google maps API to map open data onto a map using JavaScript.
+In this resource you will use the Google maps API to put open data onto a map using JavaScript.
 
 ## Using open data
 
 Open data is data that is made available for public use, for free and without restrictions. All sorts of organisations publish open data, including governments, charities and companies. You can find open data on a wide variety of topics using a search engine.
 
-Lots of cities publish their own open data. For this resource we are going to use some open data published by the city of Nottingham, UK which helpfully tells us all of the places where people got a fine for leaving dog poo!
+Lots of cities publish their own open data. For this resource we are going to use some open data published by the city of Nottingham, UK, which helpfully tells us all of the places where people got a fine for leaving dog poo!
 
- It is important to respect the license specified by the publisher of the data, and only to use the data for things allowed by the license. For us to be allowed to use this data, Nottingham City Council asks us to provide an acknowledgement to let people know where the data originally came from, and a link to the license, like this:
+It is important to respect the license specified by the publisher of the data, and to use the data only for things allowed by the license. For us to be allowed to use this data, Nottingham City Council asks us to provide an acknowledgement to let people know where the data originally came from, and a link to the license, like this:
 
 [Fixed Penalty Notices](http://www.opendatanottingham.org.uk/dataset.aspx?id=124), Nottingham City Council, 4th July 2016, licensed under the [Open Government Licence](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)
 
@@ -16,11 +16,11 @@ Lots of cities publish their own open data. For this resource we are going to us
 
 1. Open up a blank file in your chosen text editor and save the file as follows:
 
- -  If you're using **Notepad** on Windows, type the filename in as `index.html` and change the drop-down for the "Save as" type to **All files**.
+ -  If you're using **Notepad** on Windows, type the filename in as `index.html` and change the drop-down for the **Save as** type to **All files**.
 
   ![Save as HTML using Notepad](images/save-as-html-notepad.png)
 
- - If you're using **TextEdit** on Mac OS, open a new file, then select `Format` > `Make Plain Text`.
+ - If you're using **TextEdit** on Mac OS, open a new file, then select **Format** > **Make Plain Text**.
 
   ![Mac make plain text](images/mac-make-plaintext.png)
 
@@ -45,9 +45,9 @@ Lots of cities publish their own open data. For this resource we are going to us
   </html>
   ```
 
-3. Go to the folder where you saved your web page. Open the file with your internet browser, so now you'll have the same file open in both your text editor and your browser at the same time.
+3. Go to the folder where you saved your HTML file. Open the file with your internet browser as well. Now you'll have the same file open in your text editor and in your browser at the same time.
 
-  On Windows, you may need to right-click the file, choose `Open with`, and then select your internet browser.
+  On Windows, you may need to right-click the file, choose **Open with**, and then select your internet browser.
 
   ![Open with browser](images/open-with-browser.png)
 
@@ -56,7 +56,7 @@ Lots of cities publish their own open data. For this resource we are going to us
 
 ## Get a Google maps API key
 
-Next, you'll need to create a Google Maps API key. An API (or Application Programming Interface) is a set of functions provided so that you can interact with another computer which does useful things for you - in this case the Google Maps server. You need to have an **API key** to access it so that Google knows who it has allowed to use its services.
+Next, you'll need to create a Google Maps API key. An API (or Application Programming Interface) is a set of functions provided so that you can interact with another computer - in this case the Google Maps server. You need to have an **API key** to access it, so that Google knows who it has allowed to use its services.
 
 1. Follow steps 1-4 on [this page](https://developers.google.com/maps/documentation/javascript/adding-a-google-map#step_3_get_an_api_key) to obtain a Google Maps API key.
 
@@ -68,7 +68,7 @@ Next, you'll need to create a Google Maps API key. An API (or Application Progra
     </script>
     ```
 
-1. Locate the part in the code you just pasted which says `YOUR_API_KEY` and replace it with the API key you just generated, making sure there are no spaces between the key you paste in and the `=` and `&` characters either side of it.
+1. Locate the part in the code you just pasted which says `YOUR_API_KEY` and replace it with the API key you just generated, making sure there are no spaces between the key you paste in and the `=` and `&` characters on each side of it.
 
 ## Finding a latitude and longitude
 
@@ -76,11 +76,11 @@ We need to be able to tell Google Maps which area to show on our map.
 
 1. Open [Google Maps](http://maps.google.com) in a web browser.
 
-1. In the search box on the top left, type in the place you are searching for. Since the data we are using is from Nottingham in the UK, this is where we will type in. Press enter.
+1. In the search box on the top left, type in the place you are searching for. Since the data we are using is from Nottingham in the UK, this is what we will type in. Press enter.
 
     ![Search for Nottingham](images/search-for-nottingham.png)
 
-1. A map should appear with a red marker pinpointing the place you searched for. Right click on the red marker and select "What's here?".
+1. A map should appear with a red marker pinpointing the place you searched for. Right click on the red marker and select **What's here?**.
 
     ![What's here?](images/whats-here.png)
 
@@ -105,7 +105,7 @@ We need to be able to tell Google Maps which area to show on our map.
 
     This is some CSS code which will tell the map to take up the whole width of your screen, and be 400px high. You can change these values to make the map larger or smaller if you like.
 
-1. Now locate the sentence in your code which says `My map will go here`. Delete this sentence - we're going to add the map in its place!
+1. Now locate the sentence in your code that says `My map will go here`. Delete this sentence - we're going to add the map in its place!
 
 1. Add the following code to create a `<div>` (an invisible box) where your map will eventually appear:
 
@@ -217,7 +217,7 @@ Let's add a marker onto our map.
     var emoji = 'poop.png';
     ```
 
-1. Now add the following code on the line after your `animation:` inside the section where you create the marker to set the icon of the marker to be the poo emoji picture:
+1. Now add the following code on the line after your `animation:`, inside the section where you create the marker. This will set the icon of the marker to be the poo emoji picture:
 
     ```JavaScript
     icon: emoji
@@ -253,7 +253,7 @@ Let's add a marker onto our map.
 
 The full code from this section can be seen [here](code/worksheet1.html)
 
-## What's next?
+## What next?
 
 - Mark more than one piece of data on the map
 - Create a map of a different place and add your own markers
