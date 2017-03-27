@@ -144,7 +144,7 @@ We need to be able to tell Google Maps which area to show on our map.
 
 Let's add a marker onto our map.
 
-1. Open up the [Nottingham Open Data page](http://www.opendatanottingham.org.uk/dataset.aspx?id=124) and click on JSON Fixed Penalty Notices 2016
+1. Open up the [Nottingham Open Data page](http://www.opendatanottingham.org.uk/dataset.aspx?id=124) and click on **JSON Fixed Penalty Notices 2016**
 
     ![View the JSON data](images/click-on-data.png)
 
