@@ -91,7 +91,7 @@ We need to be able to tell Google Maps which area to show on our map.
 
 ## Add the map to your web page
 
-1. If you have closed the code for your webpage, open up your text editor (e.g. Notepad) and from inside the text editor reopen the `index.html` file. If you are using Notepad, you will need to change the drop down from "Text files" to "All files" (circled below) otherwise you will not be able to see the HTML files.
+1. If you have closed the code for your webpage, open up your text editor (e.g. Notepad) and, from inside the text editor, reopen the `index.html` file. If you are using Notepad, you will need to change the drop down from "Text files" to "All files" (circled below) otherwise you will not be able to see the HTML files.
 
     ![Reopening a file](images/reopen-file.png)
 
