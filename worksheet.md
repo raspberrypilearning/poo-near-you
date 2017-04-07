@@ -58,7 +58,7 @@ It is important to respect the license specified by the publisher of the data, a
 
 Next, you'll need to create a Google Maps API key. An API (or Application Programming Interface) is a set of functions provided so that you can interact with another computer - in this case the Google Maps server. You need to have an **API key** to access it, so that Google knows who it has allowed to use its services.
 
-1. Open [this page](https://developers.google.com/maps/documentation/javascript/adding-a-google-map#step_3_get_an_api_key) and under the heading "Step 3: Get an API key", follow steps 1-4 to obtain a Google Maps JavaScript API key.
+1. Open [this page](https://developers.google.com/maps/documentation/javascript/adding-a-google-map#step_3_get_an_api_key) and, under the heading "Step 3: Get an API key", follow steps 1-4 to obtain a Google Maps JavaScript API key.
 
 1. Go back to your `index.html` file and position your cursor just before the `</body>` tag. Paste in the code below:
 
