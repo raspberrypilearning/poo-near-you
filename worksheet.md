@@ -58,7 +58,7 @@ It is important to respect the license specified by the publisher of the data, a
 
 Next, you'll need to create a Google Maps API key. An API (or Application Programming Interface) is a set of functions provided so that you can interact with another computer - in this case the Google Maps server. You need to have an **API key** to access it, so that Google knows who it has allowed to use its services.
 
-1. Follow steps 1-4 on [this page](https://developers.google.com/maps/documentation/javascript/adding-a-google-map#step_3_get_an_api_key) to obtain a Google Maps API key.
+1. Open [this page](https://developers.google.com/maps/documentation/javascript/adding-a-google-map#step_3_get_an_api_key) and, under the heading "Step 3: Get an API key", follow steps 1-4 to obtain a Google Maps JavaScript API key.
 
 1. Go back to your `index.html` file and position your cursor just before the `</body>` tag. Paste in the code below:
 
@@ -90,6 +90,12 @@ We need to be able to tell Google Maps which area to show on our map.
 
 
 ## Add the map to your web page
+
+1. If you have closed the code for your webpage, open up your text editor (e.g. Notepad) and, from inside the text editor, reopen the `index.html` file. If you are using Notepad, you will need to change the drop down from "Text files" to "All files" (circled below) otherwise you will not be able to see the HTML files.
+
+    ![Reopening a file](images/reopen-file.png)
+
+    ![Files now visible](images/files-visible.png)
 
 1. Go back to your `index.html` file and find the `<head>` tag in your code. Position your cursor on the line after this tag and add the following code:
 
@@ -209,7 +215,9 @@ Let's add a marker onto our map.
 
 1. Go back to your map in the web browser and refresh the page. You should now see the pin drop from the sky when the map loads!
 
-1. Since we are mapping places where people got fined for leaving dog poo, why don't we change the marker to be a poo emoji instead! You can find lots of emojis at [Wikimedia commons](https://commons.wikimedia.org/wiki/Emoji). Save a poo emoji into the same folder as your web page, and call it `poop.png`.
+1. Since we are mapping places where people got fined for leaving dog poo, why don't we change the marker to be a poo emoji instead! You can find lots of emojis at [Wikimedia commons](https://commons.wikimedia.org/wiki/Emoji).
+
+1. Save a poo emoji into the same folder as your web page, and call it `poop.png`. You can use [this one](code/poop.png) if you like.
 
 1. Add a line of code immediately before the line that begins `var marker` to create a variable containing the filename of our poo emoji:
 
@@ -251,7 +259,7 @@ Let's add a marker onto our map.
 
     Phew, that's better!
 
-The full code from this section can be seen [here](code/worksheet1.html)
+The full code from this section can be seen [here](https://raw.githubusercontent.com/raspberrypilearning/poo-near-you/master/code/worksheet1.html)
 
 ## What next?
 

@@ -185,7 +185,7 @@ You will see that lots of the incidents are not to do with dog poo - they are ac
 
     ![Leaving litter](images/multi-emojis.png)
 
-1. The finished code is [here](code/worksheet2.html) for you to have a look at.
+1. The finished code is [here](https://raw.githubusercontent.com/raspberrypilearning/poo-near-you/master/code/worksheet2.html) for you to have a look at.
 
 ## Why did we need to run a web server?
 
