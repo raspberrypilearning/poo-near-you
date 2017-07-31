@@ -28,4 +28,4 @@ steps:
 - title: Adding more data
 - title: Using different emojis
 - title: Why did we need to run a web server?
-- title: What next?
+- title: "Challenge: Plotting your own data"
