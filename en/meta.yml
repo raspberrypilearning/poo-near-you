@@ -16,19 +16,16 @@ site_areas: ''
 steps:
 - title: Introduction
 - title: What you will need
-- title: Poo near you
 - title: Using open data
 - title: Create a web page
 - title: Get a Google maps API key
 - title: Finding a latitude and longitude
 - title: Add the map to your web page
 - title: Set a marker
-- title: What next?
-- title: Poo near you (part 2)
+- title: Challenge: More mapping
 - title: Run a local web server
 - title: Read the JSON data and plot it on the map
 - title: Adding more data
 - title: Using different emojis
 - title: Why did we need to run a web server?
 - title: What next?
-
