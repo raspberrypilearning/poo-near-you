@@ -1,0 +1,31 @@
+---
+title: Poo near you
+hero_image: images/banner.png
+description: In this resource you will use the Google maps API to put open data onto
+  a map using JavaScript
+original_url: https://raspberrypi.org/learning/poo-near-you
+theme: red
+duration: 2
+listed: false
+ingredient: false
+copyedit: true
+curriculum: creator, design-0, programming-0, phys-comp-0, manufacture-0, community-0
+interests: ''
+technologies: rpi, physical computing, python
+site_areas: ''
+steps:
+- title: Introduction
+- title: What you will need
+- title: Using open data
+- title: Create a web page
+- title: Get a Google maps API key
+- title: Finding a latitude and longitude
+- title: Add the map to your web page
+- title: Set a marker
+- title: "Challenge: More mapping"
+- title: Run a local web server
+- title: Read the JSON data and plot it on the map
+- title: Adding more data
+- title: Using different emojis
+- title: Why did we need to run a web server?
+- title: "Challenge: Plotting your own data"
