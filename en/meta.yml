@@ -2,14 +2,14 @@
 title: Poo near you
 hero_image: images/banner.png
 description: In this resource you will use the Google maps API to put open data onto
-  a map using JavaScript
+a map using JavaScript
 original_url: https://raspberrypi.org/learning/poo-near-you
 theme: violet
 duration: 2
 listed: true
 ingredient: false
 copyedit: true
-curriculum: creator, design-0, programming-0, phys-comp-0, manufacture-0, community-0
+curriculum: 3, design-0, programming-3, phys-comp-1, manufacture-0, community-0
 interests: ''
 technologies: html/css
 site_areas: ''
