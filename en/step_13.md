@@ -1,22 +1,25 @@
-## Using different emojis
+## Why did we need to run a web server?
 
-You will see that lots of the incidents are not to do with dog poo - they are actually to do with dropping litter. Let's add a different emoji depending on the type of incident.
+We need to __serve__ our webpage via a web server so that we can process the JSON data.
 
-- Save a suitable emoji image to mark litter being dropped. The emoji should be saved as `litter.png` and it should be saved into the same folder as your webpage. If you want to, you can use [this one](resources/litter.png) from [Wikimedia Commons](https://commons.wikimedia.org/wiki/Emoji).
+When data is hosted on the web, web servers have to be careful that they do not open themselves up to attacks from hackers. You may have seen warnings before about cross-site scripting attacks (or XSS for short), which can allow hijackers to put their own malicious code on normal, legitimate websites. To stop this from happening, web browsers operate a **same origin policy**, which means that code on webpage 1 can only access data from webpage 2 if both pages are of the same origin (which very roughly means "are hosted on the same server").
 
-- Add an 'if' statement to check the type of incident. If it is litter, change the variable to use the litter emoji. Otherwise, we will stick with the default poop emoji.
+So now we have a problem. We want our web page to access the JSON data, but our script will not be running on the same server as the data.
 
-    ```javascript
-    if(data[i]["Contravention_Description"].toLowerCase() == "leaving litter"){
-        emoji = 'litter.png';
-    }
-    ```
+**Why can't I just download the JSON file from the data source and access it as a file on my computer?**
 
-    We have converted the `Contravention_Description` to lowercase because some of the descriptions in the data say "Leaving litter" and some say "Leaving Litter". Although a human can understand that these both mean the same thing, the computer thinks they are different. We convert the description to all lowercase and then compare it to the phrase "leaving litter" in all lowercase, so that capitalisation doesn't matter.
+When you look at your webpage by just opening it up in the web browser, the address will start with `file://`, as will the JSON file if it is saved on your computer.
 
-- Save your code, then go back to the web browser and refresh the page. You should see two different types of emoji to show different types of incident.
+  ![Open the file in a browser](images/file-in-browser.png)
 
-    ![Leaving litter](images/multi-emojis.png)
+For security reasons, JavaScript doesn't allow you to access local files (files on the same computer) so this approach won't work.
 
-- The finished code is [here](https://raw.githubusercontent.com/raspberrypilearning/poo-near-you/master/code/worksheet2.html) for you to have a look at.
+**The fix - download the JSON file and serve it up via a local web server**
+
+This is the method we used, and here's why it works. By running the simple Python web server, you are making your computer "serve" up the pages to your web browser. When you visit `http://localhost:8000` it is similar to when you visit a real website - you are making a request to a server which then sends you back the page you asked for.
+
+If you put your `index.html` file on your web server, and then access it as `http://localhost:8000/index.html`, its **origin** is `http://localhost:8000`. If you also send your JSON file via the web server, it can be accessed at `http://localhost:8000/penalties.json` and so its **origin** is __also__ `http://localhost:8000`. This satisfies the same origin rule, and so we are able to access the JSON data in our JavaScript!
+
+Incidentally, some web servers offering JSON data are set up to send a special header allowing access from different origins. The server with the data used in this resource does not have this set up, so we downloaded the file and served it locally.
+
 

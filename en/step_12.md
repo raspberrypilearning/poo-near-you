@@ -1,16 +1,22 @@
-## Adding more data
+## Using different emojis
 
-- Now that we have access to all the JSON data, we can also plot some of the other data at each data point. Locate the line `icon: emoji`. Add a comma at the end of the line so that we can add another parameter on the line below.
+You will see that lots of the incidents are not to do with dog poo - they are actually to do with dropping litter. Let's add a different emoji depending on the type of incident.
 
-- Add a line below to plot the description of the penalty on the data marker:
+- Save a suitable emoji image to mark litter being dropped. The emoji should be saved as `litter.png` and it should be saved into the same folder as your webpage. If you want to, you can use [this one](resources/litter.png) from [Wikimedia Commons](https://commons.wikimedia.org/wiki/Emoji).
 
-    ```JavaScript
-    icon: emoji,
-    title: data[i]["Contravention_Description"]
+- Add an 'if' statement to check the type of incident. If it is litter, change the variable to use the litter emoji. Otherwise, we will stick with the default poop emoji.
+
+    ```javascript
+    if(data[i]["Contravention_Description"].toLowerCase() == "leaving litter"){
+        emoji = 'litter.png';
+    }
     ```
 
-- Refresh your map. When you hover your mouse over one of the icons, you will see the type of penalty appear in a tooltip.
+    We have converted the `Contravention_Description` to lowercase because some of the descriptions in the data say "Leaving litter" and some say "Leaving Litter". Although a human can understand that these both mean the same thing, the computer thinks they are different. We convert the description to all lowercase and then compare it to the phrase "leaving litter" in all lowercase, so that capitalisation doesn't matter.
 
-    ![Leaving litter](images/leaving-litter.png)
+- Save your code, then go back to the web browser and refresh the page. You should see two different types of emoji to show different types of incident.
 
+    ![Leaving litter](images/multi-emojis.png)
+
+- The finished code is [here](https://raw.githubusercontent.com/raspberrypilearning/poo-near-you/master/code/worksheet2.html) for you to have a look at.
 
