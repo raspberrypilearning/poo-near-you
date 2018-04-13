@@ -1,10 +1,10 @@
 ## Introduction
 
-In this resource you will use the Google maps API to put open data onto a map using JavaScript.
+In this resource you will use the Google maps API to put open data onto a map using JavaScript. Here, we've used the location data and placed poo emojis as the marker for the data on Google Maps.
 
 ### What you will make
 
-
+![Poo Map](images/poomap.gif)
 
 --- collapse ---
 
