@@ -4,7 +4,7 @@ In this resource you will use the Google maps API to put open data onto a map us
 
 ### What you will make
 
-![Poo Map](images/poomap.gif)
+![PooMap](images/poomap.gif)
 
 --- collapse ---
 
