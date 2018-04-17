@@ -1,42 +1,16 @@
-## Create a web page
+## Get a Google maps API key
 
-- Open up a blank file in your chosen text editor and save the file as follows:
+Next, you'll need to create a Google Maps API key. An API (or Application Programming Interface) is a set of functions provided so that you can interact with another computer - in this case the Google Maps server. You need to have an **API key** to access it, so that Google knows who it has allowed to use its services.
 
- -  If you're using **Notepad** on Windows, type the filename in as `index.html` and change the drop-down for the **Save as** type to **All files**.
+- Open [this page](https://developers.google.com/maps/documentation/javascript/adding-a-google-map#step_3_get_an_api_key) and, under the heading "Step 3: Get an API key", follow steps 1-4 to obtain a Google Maps JavaScript API key.
 
-  ![Save as HTML using Notepad](images/save-as-html-notepad.png)
+- Go back to your `index.html` file and position your cursor just before the `</body>` tag. Paste in the code below:
 
- - If you're using **TextEdit** on Mac OS, open a new file, then select **Format** > **Make Plain Text**.
+    ```html
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+    ```
 
-  ![Mac make plain text](images/mac-make-plaintext.png)
-
-  Make sure you save the file as `index.html`.
-
-  ![Mac saving as HTML](images/mac-name-file.png)
-
- - If you're using **Nano** on a Raspberry Pi, open a terminal window, move to the directory in which you wish to create your web page, and type `nano index.html`.
-
-  ![Nano creating HTML](images/pi-html-nano.png)
-
-2. This HTML code gives you the basic structure of a page. Copy and paste the code into the file you created, then save the file.
-
-  ```html
-  <html>
-  <head>
-    <title>My map</title>
-  </head>
-  <body>
-    My map will go here
-  </body>
-  </html>
-  ```
-
-3. Go to the folder where you saved your HTML file. Open the file with your internet browser as well. Now you'll have the same file open in your text editor and in your browser at the same time.
-
-  On Windows, you may need to right-click the file, choose **Open with**, and then select your internet browser.
-
-  ![Open with browser](images/open-with-browser.png)
-
-  Whenever you change the code in your text editor, save it and then press the refresh button on your browser to see the page update.
-
+- Locate the part in the code you just pasted which says `YOUR_API_KEY` and replace it with the API key you just generated, making sure there are no spaces between the key you paste in and the `=` and `&` characters on each side of it.
 

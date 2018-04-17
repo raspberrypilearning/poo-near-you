@@ -13,12 +13,11 @@ interests: ''
 technologies: html-css-javascript
 site_areas: projects
 hardware: ''
-software: html-css-javascript 
+software: html-css-javascript
 version: 3
 last_tested: 2017-01-01
-steps: 
+steps:
 - title: Introduction
-- title: What you will need
 - title: Using open data
 - title: Create a web page
 - title: Get a Google maps API key

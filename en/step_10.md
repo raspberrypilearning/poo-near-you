@@ -1,64 +1,84 @@
-## Run a local web server
+## Read the JSON data and plot it on the map
 
-So far, you have learnt how to mark a location on a map by finding its latitude and longitude, and you know how to customise the marker as an emoji. The data file we looked at contains a lot of data though, and typing lots of things in would take a long time. Let's get the computer to automatically retrieve the data and plot it on the map for us!
+- Load up the [Open Data Nottingham](http://www.opendatanottingham.org.uk/dataset.aspx?id=124) page in your web browser.
 
-The open data we found was in a format called JSON (JavaScript Object Notation) which is easy to read and work with using JavaScript. You may find many other open data sources as JSON, and you can access these using the methods we will show you. To be able to read the data automatically, you will need to run a web server on your computer. Fortunately, as long as you have Python 3 installed, you already have the capability to run a very basic web server!
+- Right click on **JSON Fixed Penalty Notices 2016** and choose to save the file. Name it `penalties.json` and make sure you save it into the same folder as your webpage.
 
-**On some networks (for example in schools) the use of the command prompt and certain ports will be restricted, so you may need to ask for support from your network manager to complete this part of the resource.**
+- Now go back to your text editor and look at the code for your web page. Locate the `</head>` tag, and paste in this line of code on the line immediately before it:
 
-### Running a web server
-
-- Open a terminal (Raspberry Pi, Mac) or Command Prompt (Windows):
-
-    **Windows**
-
-    ![Open a command prompt](images/command-prompt.png)
-
-    **Raspberry Pi**
-
-    ![Open a terminal on Raspberry Pi](images/terminal.png)
-
-    **Mac**
-
-    ![Open a terminal on Mac](images/mac-terminal.png)
-
-
-- Change to the directory your web page is saved in by typing `cd` followed by a space, then the path to the directory. An example directory is shown, but you may have saved your web page in a different location, so make sure you use the path to the directory you used. Be careful - Windows uses `\` between directories, but Mac and Raspberry Pi both use `/`.
-
-    **Windows**
-
-    ![Change to the directory](images/cd-to-directory.png)
-
-    **Raspberry Pi**
-
-    ```bash
-    cd /home/pi/googlemaps
+    ```html
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     ```
 
-    **Mac**
+    This line of code lets us use jQuery, which is a useful JavaScript library that we will use to process the JSON data.
 
-    ```bash
-    cd Documents/googlemaps
+- Now locate the line of code beginning `var incident_location`. Delete this line and replace it with a variable telling us where the JSON file is:
+
+    ```JavaScript
+    var data_file = "http://localhost:8000/penalties.json";
     ```
 
-- Type the following command to start the web server, which will serve files from the directory you were in when you started it.
+    You will notice that we have specified the path to this file as being on `localhost` - this means the file will be __served__ through the web server, rather than accessed as a file on your computer. This is very important - without this, JavaScript will not allow us to use the JSON file.
 
-    **Windows**
+- Immediately after the line you just added, add in the following code which reads data from the JSON file:
 
-    ```bash
-    python -m http.server
+    ```JavaScript
+    $.getJSON(data_file, function(data){
+
+    });
     ```
 
-    **Raspberry Pi and Mac**
+- The JSON file has lots of data in it, so instead of only processing one piece of data, we need to process a lot of them - we are going to need a loop. Between the opening and closing curly brackets, add some code to loop through __each__ of the objects returned by the JSON file. Your code should now look like this:
 
-    ```bash
-    python3 -m http.server
+    ```JavaScript
+    $.getJSON(data_file, function(data){
+        $.each(data, function(i){
+
+        });
+    });
     ```
 
-- You should see a message that will be similar to this - `Serving HTTP on 0.0.0.0 port 8000 ...`
+- Inside the curly brackets belonging to the `$.each` loop, create a variable containing the location.
 
-- Open up a web browser. In the address bar, type in `http://localhost:8000/index.html` and press enter. You should see your map webpage appear, but this time it is being __served__ to you by the Python web server!
+    ```JavaScript
+    var incident_location =  data[i]["Street"] + ", Nottingham, UK";
+    ```
 
-    ![Served page with map](images/local-server-map.png)
+    Here's what this code does:
+    - `var incident_location =` - Create a variable called `incident_location` (this is deliberately the same name as the variable we deleted earlier)
+    - `data[i]["Street"]` - The `$getJSON` function gives us the `data` from the JSON file. Each time the `$.each` loop runs, it looks at a new item of data. The item it is currently looking at is item `[i]`. From the current data, we want to look specifically at the `["Street"]`
+    - `+ ", Nottingham UK"` - We are adding on "Nottingham, UK" to the street name. This is so the Geocoder has a bit more information about the location when it looks it up - for example there may be lots of streets in the UK with the same name, so we need to be specific that we want the one in Nottingham.
 
-You may be curious as to why it is necessary to run a web server. Why can't we just carry on looking at the web page as we did in worksheet 1? The explanation for why this is necessary is at the end of this worksheet.
+- We will only plot the first ten items from the data. This is because using the geocoder is "expensive" in computational terms, so Google Maps has a quota on how many geocodes you can do per day, and how quickly you can do them. If you attempt to geocode all of the data at once, your code will fail after the first ten. You will be making requests too quickly for the geocoder API, and Google will stop letting you use the geocoder! Add in this block of code immediately after `var incident_location` to tell the loop to stop after the first ten results:
+
+    ```JavaScript
+    if( i == 10 ){ return false; }
+    ```
+
+- Now highlight all of your existing `geocoder` code. Move this code so that it is also inside the curly brackets, immediately after the `if` statement you added in the previous step. Your final code should look like this:
+
+    ```JavaScript
+    $.getJSON(data_file, function(data){
+        $.each(data, function(i){
+            var incident_location =  data[i]["Street"] + ", Nottingham, UK";
+
+            if( i == 10 ){ return false; }
+
+            geocoder.geocode( { 'address': incident_location }, function(results) {
+                var emoji = 'poop.png';
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location,
+                    animation: google.maps.Animation.DROP,
+                    icon: emoji
+                });
+
+            });
+        });
+    });
+    ```
+
+- Save your file and then refresh the page being served from `http://localhost:8000/index.html`. You should see ten locations marked on your map!
+
+    ![Served page with map](images/multiple-locations.png)
+

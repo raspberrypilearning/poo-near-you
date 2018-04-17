@@ -1,16 +1,19 @@
-## Get a Google maps API key
+## Finding a latitude and longitude
 
-Next, you'll need to create a Google Maps API key. An API (or Application Programming Interface) is a set of functions provided so that you can interact with another computer - in this case the Google Maps server. You need to have an **API key** to access it, so that Google knows who it has allowed to use its services.
+We need to be able to tell Google Maps which area to show on our map.
 
-- Open [this page](https://developers.google.com/maps/documentation/javascript/adding-a-google-map#step_3_get_an_api_key) and, under the heading "Step 3: Get an API key", follow steps 1-4 to obtain a Google Maps JavaScript API key.
+- Open [Google Maps](http://maps.google.com) in a web browser.
 
-- Go back to your `index.html` file and position your cursor just before the `</body>` tag. Paste in the code below:
+- In the search box on the top left, type in the place you are searching for. Since the data we are using is from Nottingham in the UK, this is what we will type in. Press enter.
 
-    ```html
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-    </script>
-    ```
+    ![Search for Nottingham](images/search-for-nottingham.png)
 
-- Locate the part in the code you just pasted which says `YOUR_API_KEY` and replace it with the API key you just generated, making sure there are no spaces between the key you paste in and the `=` and `&` characters on each side of it.
+- A map should appear with a red marker pinpointing the place you searched for. Right click on the red marker and select **What's here?**.
+
+    ![What's here?](images/whats-here.png)
+
+- At the bottom, a small box should pop up, and it might have the name of a local place in it. The name doesn't matter, what we are looking for are the **latitude** and **longitude** values of our place, shown here in the red box. Keep these values handy as we will need them in a minute.
+
+    ![Latitude and longitude](images/lat-long.png)
+
 
