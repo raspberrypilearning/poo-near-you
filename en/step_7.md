@@ -64,6 +64,7 @@ Let's add a marker onto our map.
     ```html
     animation: google.maps.Animation.DROP,
     ```
+If you're struggling to find where you set the position of the marker, have a look at the pseudocode above.
 
 - Go back to your map in the web browser and refresh the page. You should now see the pin drop from the sky when the map loads!
 
@@ -112,4 +113,3 @@ Let's add a marker onto our map.
     Phew, that's better!
 
 The full code from this section can be seen [here](https://raw.githubusercontent.com/raspberrypilearning/poo-near-you/master/code/worksheet1.html)
-
