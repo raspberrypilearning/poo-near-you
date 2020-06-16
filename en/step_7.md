@@ -55,6 +55,7 @@ Let's add a marker onto our map.
     END geocoding
 
     ```
+
 - Save your code and refresh your web page in the browser. Check that a marker was placed on Sneinton Road in Nottingham - you may need to zoom in to see!
 
     ![Marker was placed](images/sneinton-road.png)
@@ -64,6 +65,7 @@ Let's add a marker onto our map.
     ```html
     animation: google.maps.Animation.DROP,
     ```
+    
 If you're struggling to find where you set the position of the marker, have a look at the pseudocode above.
 
 - Go back to your map in the web browser and refresh the page. You should now see the pin drop from the sky when the map loads!
