@@ -7,7 +7,6 @@ In this resource you will use JavaScript and the Google Maps API to put open dat
 ![PooMap](images/poomap.gif)
 
 --- collapse ---
-
 ---
 title: What you will need
 ---
@@ -27,7 +26,6 @@ Although this resource does not use Python, you will need Python 3 installed to 
 --- /collapse ---
 
 --- collapse ---
-
 ---
 title: What you will learn
 ---
