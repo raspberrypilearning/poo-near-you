@@ -32,7 +32,7 @@
     **Raspberry Pi**
 
     ```bash
-    cd / home / pi / googlemaps
+    cd /home/pi/googlemaps
     ```
 
     **Mac**
@@ -55,9 +55,9 @@
     python -m http.server
     ```
 
-- आपको एक संदेश देखना चाहिए जो इसके समान होगा - ` 0.0.0.0 पोर्ट 8000 पर HTTP सर्विंग ... `
+- आपको एक संदेश देखना चाहिए जो इसके समान होगा - `Serving HTTP on 0.0.0.0 port 8000 ...`
 
-- एक वेब ब्राउज़र खोलें। पता(address) बार में, टाइप करें ` http: // localhost: 8000 / index.html ` और एंटर दबाएं। आपको अपना map webpage दिखाई देना चाहिए, लेकिन इस बार इसे __ परोस दिया जा रहा है __ Python वेब सर्वर द्वारा आप के लिए!
+- एक वेब ब्राउज़र खोलें। पता(address) बार में, टाइप करें `http://localhost:8000/index.html` और एंटर दबाएं। आपको अपना map webpage दिखाई देना चाहिए, लेकिन इस बार इसे __ परोस दिया जा रहा है __ Python वेब सर्वर द्वारा आप के लिए!
 
     ![Map के पेज को Served करे](images/local-server-map.png)
 
