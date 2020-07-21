@@ -1,34 +1,34 @@
-## Read the JSON data and plot it on the map
+## JSON डेटा पढ़ें और इसे map पर प्लॉट करें
 
-- Load up the [Open Data Nottingham](http://www.opendatanottingham.org.uk/dataset.aspx?id=124) page in your web browser.
+- आपके वेब ब्राउज़र में [ डेटा नॉटिंघम ](http://www.opendatanottingham.org.uk/dataset.aspx?id=124) पेज लोड करें ।
 
-- Right click on **JSON Fixed Penalty Notices 2016** and choose to save the file. Name it `penalties.json` and make sure you save it into the same folder as your webpage.
+- ** JSON फिक्स्ड पेनल्टी नोटिस 2016 ** पर राइट क्लिक करें और फ़ाइल को सेव़ करने के लिए चुनें। इसे नाम दें `penalties.json`और सुनिश्चित करें कि आप इसे अपने वेबपेज के समान फ़ोल्डर में हैं।
 
-- Now go back to your text editor and look at the code for your web page. Locate the `</head>` tag, and paste in this line of code on the line immediately before it:
+- अब अपने टेक्स्ट एडिटर पर वापस जाएं और अपने वेब पेज के कोड को देखें। `</head>` टैग का पता लगाएँ और कोड में इस लाइन से पहले की लाइन में पेस्ट करें :
 
     ```html
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script></script><script src="http://code.jquery.com/jquery-latest.js">
     ```
 
-    This line of code lets us use jQuery, which is a useful JavaScript library that we will use to process the JSON data.
+    कोड की यह लाइन हमें jQuery का उपयोग करने देती है, जो एक उपयोगी JavaScript(JavaScript) लाइब्रेरी है जिसका उपयोग हम JSON डेटा को प्रोसेस करने के लिए करेंगे।
 
-- Now locate the line of code beginning `var incident_location`. Delete this line and replace it with a variable telling us where the JSON file is:
+- अब ` var event_location ` कोड की शुरुआत की लाइन का पता लगाएं । इस लाइन को हटाएं और इसे एक वेरिएबल के साथ बदलें जिसमें हमें बताया गया है कि JSON फ़ाइल कहां है:
 
     ```JavaScript
-    var data_file = "http://localhost:8000/penalties.json";
+    var data_file = "http: // localhost: 8000 / penalties.json";
     ```
 
-    You will notice that we have specified the path to this file as being on `localhost` - this means the file will be __served__ through the web server, rather than accessed as a file on your computer. This is very important - without this, JavaScript will not allow us to use the JSON file.
+    आप देखेंगे कि हमने इस फ़ाइल का पथ निर्दिष्ट किया है जैसा कि ` लोकलहोस्ट(local host)` पर है - इसका मतलब है कि फ़ाइल __ served __ कि जायेगी जो वेब सर्वर के माध्यम से, बजाय आपके कंप्यूटर पर एक फ़ाइल के रूप में इस्तेमाल हुए। यह बहुत महत्वपूर्ण है - इसके बिना JavaScript(JavaScript) हमें JSON फ़ाइल का उपयोग करने की अनुमति नहीं देगा।
 
-- Immediately after the line you just added, add in the following code which reads data from the JSON file:
+- आपके द्वारा जोड़ी गई लाइन के तुरंत बाद, निम्न कोड जोड़ें जो JSON फ़ाइल से डेटा पढ़ता है:
 
     ```JavaScript
     $.getJSON(data_file, function(data){
 
-    });
+    })
     ```
 
-- The JSON file has lots of data in it, so instead of only processing one piece of data, we need to process a lot of them - we are going to need a loop. Between the opening and closing curly brackets, add some code to loop through __each__ of the objects returned by the JSON file. Your code should now look like this:
+- JSON फ़ाइल में बहुत सारे डेटा होते हैं, इसलिए डेटा के केवल एक टुकड़े को संसाधित(process) करने के बजाय, हमें उनमें से कई को संसाधित(process) करने की आवश्यकता है - हमें एक लूप की आवश्यकता होने वाली है। Curly brackets खोलने और बंद करने के बीच, __प्रत्येक __JSON फ़ाइल द्वारा दिए गए ऑब्जेक्ट्स को कुछ कोड के माध्यम से लूप में जोड़ें । आपका कोड अब इस प्रकार दिखेगा:
 
     ```JavaScript
     $.getJSON(data_file, function(data){
@@ -38,24 +38,24 @@
     });
     ```
 
-- Inside the curly brackets belonging to the `$.each` loop, create a variable containing the location.
+- Inside brackets के अंदर से संबंधित ` $.each ` लूप, एक वैरिएबल बनाएं जिसमें स्थान हो।
 
     ```JavaScript
     var incident_location =  data[i]["Street"] + ", Nottingham, UK";
     ```
 
-    Here's what this code does:
-    - `var incident_location =` - Create a variable called `incident_location` (this is deliberately the same name as the variable we deleted earlier)
-    - `data[i]["Street"]` - The `$getJSON` function gives us the `data` from the JSON file. Each time the `$.each` loop runs, it looks at a new item of data. The item it is currently looking at is item `[i]`. From the current data, we want to look specifically at the `["Street"]`
-    - `+ ", Nottingham UK"` - We are adding on "Nottingham, UK" to the street name. This is so the Geocoder has a bit more information about the location when it looks it up - for example there may be lots of streets in the UK with the same name, so we need to be specific that we want the one in Nottingham.
+    ये कोड ये करता है:
+    - `var incident location ` - ` event_location ` नामक एक वेरिएबल बनाएं(यह जानबूझकर वैसा ही नाम है जैसा हमने पहले डिलीट किया था)
+    - `data[i]["Street"]` - `$getJSON` फ़ंक्शन हमेंJSON फ़ाइल से ` डेटा` देता है । हर बार ` $.each` लूप चलता है, यह डेटा के एक नए आइटम को देखता है। वर्तमान में जिस आइटम को देख रहा है वह आइटम `[i]` है । वर्तमान डेटा से, हम विशेष रूप से ` ["Street"]`देखना चाहते हैं
+    - ` + ", Nottingham UK ` - हम सड़क के नाम पर " Nottingham, UK जोड़ रहे हैं। यह इसलिए है कि जियोकोडर के पास स्थान के बारे में थोड़ी अधिक जानकारी होती है जब वह इसे देखता है - उदाहरण के लिए ब्रिटेन में एक ही नाम से बहुत सारी सड़कें हो सकती हैं, इसलिए हमें विशिष्ट होना चाहिए कि हम नॉटिंघम में चाहते हैं।
 
-- We will only plot the first ten items from the data. This is because using the geocoder is "expensive" in computational terms, so Google Maps has a quota on how many geocodes you can do per day, and how quickly you can do them. If you attempt to geocode all of the data at once, your code will fail after the first ten. You will be making requests too quickly for the geocoder API, and Google will stop letting you use the geocoder! Add in this block of code immediately after `var incident_location` to tell the loop to stop after the first ten results:
+- हम केवल पहले दस आइटम को डेटा से प्लॉट करेंगे। ऐसा इसलिए है क्योंकि कम्प्यूटेशनल शब्दों में जियोकोडर का उपयोग करना "महंगा" है, इसलिए Google मैप्स पर एक कोटा है कि आप प्रति दिन कितने जियोकोड्स कर सकते हैं, और कितनी जल्दी आप उन्हें कर सकते हैं। यदि आप एक बार में सभी डेटा को जियोकोड करने का प्रयास करते हैं, तो आपका कोड पहले दस के बाद विफल(Fail) हो जाएगा। आप जियोकोडर एपीआई(API) के लिए बहुत जल्दी अनुरोध कर रहे हैं, और Google आपको जियोकोडर का उपयोग करने देना बंद कर देगा! ` var incident_location` के तुरंत बाद कोड के इस ब्लॉक में जोड़ें लूप को बताने के लिए की पहले दस परिणामों के बाद बंद करना है:
 
     ```JavaScript
     if( i == 10 ){ return false; }
     ```
 
-- Now highlight all of your existing `geocoder` code. Move this code so that it is also inside the curly brackets, immediately after the `if` statement you added in the previous step. Your final code should look like this:
+- अब अपने सभी मौजूदा ` जियोकोडर` कोड को हाइलाइट करें । इस कोड को स्थानांतरित करें ताकि यह curly brackets के अंदर भी हो, `if`के तुरंत बाद जो आपने पिछले चरण(step) में जोड़ा है। आपका कोड इस तरह दिखना चाहिए:
 
     ```JavaScript
     $.getJSON(data_file, function(data){
@@ -69,7 +69,7 @@
                 var marker = new google.maps.Marker({
                     map: map,
                     position: results[0].geometry.location,
-                    animation: google.maps.Animation.DROP,
+                    animation: google.mapsAnimation.DROP,
                     icon: emoji
                 });
 
@@ -78,7 +78,7 @@
     });
     ```
 
-- Save your file and then refresh the page being served from `http://localhost:8000/index.html`. You should see ten locations marked on your map!
+- अपनी फ़ाइल सेव करे और फिर ` http: // localhost: 8000 / index.html `से दी जा रहे पेज को ताज़ा करें । आपको अपने नक्शे पर चिह्नित दस स्थानों दिखने चाहिए!
 
-    ![Served page with map](images/multiple-locations.png)
+    ![नक्शे के साथ page Served करे](images/multiple-locations.png)
 
