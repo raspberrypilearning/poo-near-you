@@ -1,12 +1,12 @@
-## Set a marker
+## एक मार्कर सेट करें
 
-Let's add a marker onto our map.
+हमारे Map पर एक मार्कर जोड़ते हैं।
 
-- Open up the [Nottingham Open Data page](http://www.opendatanottingham.org.uk/dataset.aspx?id=124) and click on **JSON Fixed Penalty Notices 2016**
+- [ नॉटिंघम ओपन डेटा पेज](http://www.opendatanottingham.org.uk/dataset.aspx?id=124) खोलें और ** JSON फिक्स्ड पेनल्टी नोटिस 2016** पर क्लिक करें
 
-    ![View the JSON data](images/click-on-data.png)
+    ![JSON डेटा देखें](images/click-on-data.png)
 
-- You should now see a very long file with lots of text, telling us about fixed penalty notices people were given in Nottingham in 2016. Let's have a look at one of these as an example:
+- अब आपको बहुत सारे टेक्स्ट के साथ एक बहुत लंबी फ़ाइल दिखनी चाहिए, जिसमें हमें बताया गया है कि 2016 में नॉटिंघम में लोगों को निश्चित दंड नोटिस दिए गए थे। आइए एक उदाहरण के रूप में इनमें से एक को देखें:
 
     ```JavaScript
     {
@@ -23,9 +23,9 @@ Let's add a marker onto our map.
     }
     ```
 
-    We can see from the `Contravention_Description` that this person was naughty and didn't clean up some dog poo! The part we are interested in at the moment is the `Street` which is "Sneinton Road".
+    हम ` Contravention_Description` से देख सकते हैं यह व्यक्ति नटखट था और कुछ कुत्ते की पू को साफ नहीं करता था! फिलहाल हम जिस हिस्से में रुचि रखते हैं वह है ` Street` जो "Sneinton Road" है।
 
-- To be able to place a marker on the map, we need to know the **latitude** and **longitude** where the marker should be placed. It would be a bit annoying having to look up the latitude and longitude ourselves on Google Maps for every single marker, so let's get the computer to find it out for us! Locate the `}` just before the `</script>` tag. Add this code **before** the `}` symbol:
+- टैग से ठीक पहले**}**लगाएँ जो**</1></0  Google Maps पर हर एक मार्कर के लिए अक्षांश और देशांतर को देखना थोड़ा कठिन होगा, तो आइए इसे जानने के लिए कंप्यूटर का प्रयोग करें टैग से ठीक पहले`}`लगाएँ जो`</script></0 टैग से ठीक पहले<strong x-id="1">}</strong>लगाएँ जो<0> `</0>
 
     ```JavaScript
     var geocoder = new google.maps.Geocoder();
@@ -40,8 +40,9 @@ Let's add a marker onto our map.
 
     });
     ```
+</p>
 
-    Here's what this code does as pseudo code:
+    ये कोड pseudo कोड के रूप में क्या करता है:
 
     ```html
     SET UP a geocoder (finds lat/lng from addresses)
@@ -55,41 +56,43 @@ Let's add a marker onto our map.
     END geocoding
 
     ```
+</li>
 
-- Save your code and refresh your web page in the browser. Check that a marker was placed on Sneinton Road in Nottingham - you may need to zoom in to see!
+- अपना कोड सेव (save) करें और अपने इंटरनेट ब्राउज़र को ताज़ा(Refresh) करें। जांचें कि नॉटिंघम में स्नेनटन रोड पर एक मार्कर रखा गया था - आपको देखने के लिए ज़ूम इन करना पड़ सकता है!
 
-    ![Marker was placed](images/sneinton-road.png)
+    ![मार्कर रखा गया था](images/sneinton-road.png)
 
-- We can make our markers a bit more interesting by animating them and changing the image. Position your cursor on a blank line immediately after the line of code where you set the position of the marker, and add the following line of code:
+- हम अपने मार्करों को एनिमेटेड करके और छबि को बदलकर थोड़ा अधिक रोचक बना सकते हैं। अपने कर्सर को कोड की लाइन के तुरंत बाद एक खाली लाइन पर रखें जहां आपने मार्कर की स्थिति निर्धारित की है, और कोड की निम्नलिखित लाइन जोड़ें:
 
     ```html
-    animation: google.maps.Animation.DROP,
+    animation: google.maps.Animation.DROP
     ```
+</ul>
 
-If you're struggling to find where you set the position of the marker, have a look at the pseudocode above.
+यदि आप यह पता लगाने के लिए संघर्ष कर रहे हैं कि आपने मार्कर की स्थिति कहाँ निर्धारित की है, तो ऊपर दिए गए pseudo कोड पर एक नज़र डालें।
 
-- Go back to your map in the web browser and refresh the page. You should now see the pin drop from the sky when the map loads!
+- वेब ब्राउजर में अपने मैप पर वापस जाएं और पेज को रिफ्रेश करें। मैप लोड होने पर आपको अब आसमान से पिन ड्रॉप दिखना चाहिए!
 
-- Since we are mapping places where people got fined for leaving dog poo, why don't we change the marker to be a poo emoji instead! You can find lots of emojis at [Wikimedia commons](https://commons.wikimedia.org/wiki/Emoji).
+- चूँकि हम उन जगहों की मैपिंग कर रहे हैं जहाँ लोगों को कुत्ते की पू छोड़ने के लिए जुर्माना मिला है, इसलिए हम इसके बदले मार्कर को पू इमोजी बना के क्यों नहीं बदलते! आप [ Wikimedia commons](https://commons.wikimedia.org/wiki/Emoji) पर बहुत सारी इमोजी पा सकते हैं ।
 
-- Save a poo emoji into the same folder as your web page, and call it `poop.png`. You can use [this one](resources/poop.png) if you like.
+- अपने वेब पेज के समान फ़ोल्डर में एक पू इमोजी को सहेजें, और इसे ` poop.png` बुलाये । आप [इस का](resources/poop.png) उपयोग कर सकते हैं यदि आप चाहते हैं।
 
-- Add a line of code immediately before the line that begins `var marker` to create a variable containing the filename of our poo emoji:
+- ` var marker` से शुरू होने वाली लाइन से ठीक पहले कोड की एक पंक्ति जोड़ें, हमारे पू इमोजी के फ़ाइल नाम से एक variable बनाने के लिए:
 
     ```JavaScript
     var emoji = 'poop.png';
     ```
 
-- Now add the following code on the line after your `animation:`, inside the section where you create the marker. This will set the icon of the marker to be the poo emoji picture:
+- अब अपने ` animation:` के बाद लाइन पर निम्न कोड जोड़ें:, उस अनुभाग के अंदर जहां आप मार्कर बनाते हैं। यह मार्कर के आइकन को पू इमोजी पिक्चर के रूप में सेट करेगा:
 
     ```JavaScript
     icon: emoji
     ```
 
-- The full code should now look like this:
+- आपका कोड अब इस प्रकार दिखना चाहिए:
 
     ```JavaScript
-    var geocoder = new google.maps.Geocoder();
+    var geocoder = new google.mapsGeocoder();
     var incident_location = "Sneinton Road, Nottingham, UK";
 
     geocoder.geocode( { 'address': incident_location }, function(results) {
@@ -104,14 +107,14 @@ If you're struggling to find where you set the position of the marker, have a lo
     });
     ```
 
-- Save your code, go back to your browser and refresh the page. You should see a poop emoji appear instead of a marker!
+- अपना कोड सहेजें, अपने ब्राउज़र पर वापस जाएं और पेज को रीफ़्रेश करें। आपको एक पू इमोजी दिखना चाहिए बजाय एक मार्कर के!
 
-    ![Big poo on Nottingham](images/poo-on-nottingham.png)
+    ![नॉटिंघम पर बड़ा पू](images/poo-on-nottingham.png)
 
-    When I did this, the emoji I saved was quite big so it covered the whole of Nottingham with poo (and made me laugh a lot!) If your emoji is too big, you can resize it using an image editing program, or you could download and use [this small one](resources/poop.png) instead.
+    जब मैंने ऐसा किया, तो जो इमोजी मैंने save करी वह काफी बड़ी थी, इसलिए इसने पूरे नॉटिंघम को पू से ढक दिया (और मुझे बहुत हँसाया!)। यदि आपका इमोजी बहुत बड़ा है, तो आप इमेज एडिटिंग प्रोग्राम का उपयोग करके आकार बदल सकते हैं, या आप डाउनलोड और उपयोग कर सकते हैं [ यह छोटा ](resources/poop.png)।
 
-    ![Small poo on Nottingham](images/small-poo.png)
+    ![नॉटिंघम पर छोटा पू](images/small-poo.png)
 
-    Phew, that's better!
+    भई, यह बेहतर है!
 
-The full code from this section can be seen [here](https://raw.githubusercontent.com/raspberrypilearning/poo-near-you/master/code/worksheet1.html)
+इस अनुभाग से पूर्ण कोड[ यहां](https://raw.githubusercontent.com/raspberrypilearning/poo-near-you/master/code/worksheet1.html)देखा जा सकता है
