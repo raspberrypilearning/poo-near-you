@@ -1,19 +1,19 @@
-## Finding a latitude and longitude
+## एक अक्षांश और देशांतर ढूँढना
 
-We need to be able to tell Google Maps which area to show on our map.
+हमें Google मानचित्र को यह बताने में सक्षम होना चाहिए कि हमारे मानचित्र पर कौन सा क्षेत्र दिखाना है।
 
-- Open [Google Maps](http://maps.google.com) in a web browser.
+- एक वेब ब्राउज़र में[ Google Maps](http://maps.google.com) खोलें ।
 
-- In the search box on the top left, type in the place you are searching for. Since the data we are using is from Nottingham in the UK, this is what we will type in. Press enter.
+- शीर्ष बाईं ओर खोज(search) बॉक्स में, उस स्थान को टाइप करें जिसे आप खोज(search) रहे हैं। चूँकि हम जो डेटा उपयोग कर रहे हैं वह ब्रिटेन के नॉटिंघम का है, यह वह है जो हम टाइप करेंगे। शीर्ष बाईं ओर खोज(search) बॉक्स में, उस स्थान को टाइप करें जिसे आप खोज(search) रहे हैं।
 
-    ![Search for Nottingham](images/search-for-nottingham.png)
+    ![शीर्ष बाईं ओर खोज(search) बॉक्स में, उस स्थान को टाइप करें जिसे आप खोज(search) रहे हैं।](images/search-for-nottingham.png)
 
-- A map should appear with a red marker pinpointing the place you searched for. Right click on the red marker and select **What's here?**.
+- आपके द्वारा खोजे गए स्थान को मैप करते हुए एक लाल मार्कर के साथ एक नक्शा दिखाई देना चाहिए। लाल मार्कर पर राइट क्लिक करें और चुनें ** यहाँ क्या है? ** ।
 
-    ![What's here?](images/whats-here.png)
+    ![तल(Bottom) पर, एक छोटा बॉक्स पॉप अप करना चाहिए, और इसमें एक स्थानीय स्थान का नाम हो सकता है।](images/whats-here.png)
 
-- At the bottom, a small box should pop up, and it might have the name of a local place in it. The name doesn't matter, what we are looking for are the **latitude** and **longitude** values of our place, shown here in the red box. Keep these values handy as we will need them in a minute.
+- तल(Bottom) पर, एक छोटा बॉक्स पॉप अप करना चाहिए, और इसमें एक स्थानीय स्थान का नाम हो सकता है। इन मूल्यों(values) को संभाल कर रखें क्योंकि हमें एक मिनट में उनकी आवश्यकता होगी। इन मूल्यों(values) को संभाल कर रखें क्योंकि हमें एक मिनट में उनकी आवश्यकता होगी।
 
-    ![Latitude and longitude](images/lat-long.png)
+    ![अक्षांश और देशांतर](images/lat-long.png)
 
 
