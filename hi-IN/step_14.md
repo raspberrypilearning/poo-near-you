@@ -1,3 +1,3 @@
-## Challenge: Plotting your own data
-- Find some different open data and plot it onto a map
-- Can you customise your map any further? Have a look at the [Google maps API documentation](https://developers.google.com/maps/documentation/javascript/tutorial) and see what else you can add
+## चुनौती: अपना खुद का डेटा प्लॉट करना
+- कुछ अलग मुफ्त डेटा खोजें और इसे map पर प्लॉट करें
+- क्या आप अपने नक्शे को और अधिक अनुकूलित कर सकते हैं? [ Google maps API ](https://developers.google.com/maps/documentation/javascript/tutorial)दस्तावेज़ीकरण(Documentation) पर एक नज़र डालें और देखें कि आप और क्या जोड़ सकते हैं
