@@ -1,4 +1,4 @@
-## Challenge: More mapping
+## चुनौती: अधिक स्टाइलिंग
 
-- Mark more than one piece of data on the map
-- Create a map of a different place and add your own markers
+- Map पर डेटा के एक से अधिक टुकड़े को चिह्नित करें
+- एक अलग जगह का नक्शा बनाएं और अपने स्वयं के मार्कर जोड़ें
