@@ -1,7 +1,7 @@
 ---
-title: Poo near you
+title: आपके पास poo
 hero_image: images/banner.png
-description: In this resource you will use the Google maps API to put open data onto a map using JavaScript
+description: इस संसाधन में आप JavaScript का उपयोग करते हुए मुफ्त डेटा को map पर रखने के लिए Google मानचित्र API का उपयोग करेंगे।
 original_url: https://raspberrypi.org/learning/poo-near-you
 theme: violet
 duration: 2
@@ -18,30 +18,30 @@ version: 3
 last_tested: 2018-05-22
 steps:
   - 
-    title: Introduction
+    title: परिचय
   - 
-    title: Using open data
+    title: मुफ्त डेटा का उपयोग
   - 
-    title: Create a web page
+    title: एक वेबपेज बनाएँ
   - 
-    title: Get a Google maps API key
+    title: Google map एपीआई (API) Key प्राप्त करें
   - 
-    title: Finding a latitude and longitude
+    title: एक चौड़ाई और ढूँढना
   - 
-    title: Add the map to your web page
+    title: अपने वेब पेज पर Map जोड़ें
   - 
-    title: Set a marker
+    title: एक मार्कर सेट करें
   - 
-    title: "Challenge: More mapping"
+    title: "चुनौती: अधिक स्टाइलिंग"
   - 
-    title: Run a local web server
+    title: एक local वेब सर्वर चलाएं
   - 
-    title: Read the JSON data and plot it on the map
+    title: JSON डेटा पढ़ें और इसे map पर प्लॉट करें
   - 
-    title: Adding more data
+    title: अधिक डेटा जोड़े
   - 
-    title: Using different emojis
+    title: विभिन्न इमोजी का उपयोग करना
   - 
-    title: Why did we need to run a web server?
+    title: हमें वेब सर्वर चलाने की आवश्यकता क्यों थी?
   - 
-    title: "Challenge: Plotting your own data"
+    title: "चुनौती: अपना खुद का डेटा प्लॉट करना"
