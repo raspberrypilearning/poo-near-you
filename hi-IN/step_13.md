@@ -1,25 +1,25 @@
-## Why did we need to run a web server?
+## हमें वेब सर्वर चलाने की आवश्यकता क्यों थी?
 
-We need to __serve__ our webpage via a web server so that we can process the JSON data.
+हमें वेब सर्वर के माध्यम से हमारा वेबपेज__serve__करना था ताकि हम JSON डेटा को प्रोसेस कर सकें।
 
-When data is hosted on the web, web servers have to be careful that they do not open themselves up to attacks from hackers. You may have seen warnings before about cross-site scripting attacks (or XSS for short), which can allow hijackers to put their own malicious code on normal, legitimate websites. To stop this from happening, web browsers operate a **same origin policy**, which means that code on webpage 1 can only access data from webpage 2 if both pages are of the same origin (which very roughly means "are hosted on the same server").
+जब डेटा को वेब पर होस्ट किया जाता है, तो वेब सर्वर को सावधान रहना होगा कि वे हैकर्स से हमलों के लिए खुद डेटा को न खोलें। आपने क्रॉस-साइट स्क्रिप्टिंग हमलों (या शॉर्ट के लिए XSS) के बारे में चेतावनी देखी होगी, जो हैकर्स को सामान्य वेबसाइटों पर अपना दुर्भावनापूर्ण कोड डालने की अनुमति दे सकते हैं। ऐसा होने से रोकने के लिए, वेब ब्राउज़र ** समान मूल नीति **संचालित करते हैं, जिसका अर्थ है कि वेबपेज 1 पर कोड केवल वेबपेज 2 के डेटा का उपयोग कर सकता है यदि दोनों पृष्ठ एक ही मूल के हैं (जिसका अर्थ है मोटे तौर पर "एक ही सर्वर पर होस्ट किया जाता है")।
 
-So now we have a problem. We want our web page to access the JSON data, but our script will not be running on the same server as the data.
+तो अब हमारे पास एक समस्या है। हम चाहते हैं कि हमारा वेब पेज JSON डेटा एक्सेस करे, लेकिन हमारी स्क्रिप्ट डेटा वाले सर्वर पर नहीं चल रही होगी।
 
-**Why can't I just download the JSON file from the data source and access it as a file on my computer?**
+**मैं सिर्फ डेटा स्रोत से JSON फ़ाइल को डाउनलोड क्यों नहीं कर सकता और इसे अपने कंप्यूटर पर फ़ाइल के रूप में एक्सेस क्यों नहीं कर सकता हूं?**
 
-When you look at your webpage by just opening it up in the web browser, the address will start with `file://`, as will the JSON file if it is saved on your computer.
+जब आप अपने वेबपेज को केवल वेब ब्राउज़र में खोलकर देखेंगे, तो पता ` file:// // `से शुरू होगा, जैसे कि JSON फ़ाइल होगी यदि यह आपके कंप्यूटर पर सहेजी गई है।
 
-  ![Open the file in a browser](images/file-in-browser.png)
+  ![ब्राउज़र में फ़ाइल खोलें](images/file-in-browser.png)
 
-For security reasons, JavaScript doesn't allow you to access local files (files on the same computer) so this approach won't work.
+सुरक्षा कारणों से, JavaScript आपको स्थानीय(Local) फ़ाइलों (एक ही कंप्यूटर पर फ़ाइलें) का उपयोग करने की अनुमति नहीं देता है, इसलिए यह काम नहीं करेगा।
 
-**The fix - download the JSON file and serve it up via a local web server**
+**फिक्स - JSON फ़ाइल डाउनलोड करें और इसे एक स्थानीय(Local) वेब सर्वर के माध्यम से सेवा दें**
 
-This is the method we used, and here's why it works. By running the simple Python web server, you are making your computer "serve" up the pages to your web browser. When you visit `http://localhost:8000` it is similar to when you visit a real website - you are making a request to a server which then sends you back the page you asked for.
+यह वह मेथड है जिसका हमने उपयोग किया था, और यहाँ है यह क्यों काम करता है। सरल Python वेब सर्वर चलाकर, आप अपने कंप्यूटर को अपने वेब ब्राउज़र के पेज को "serve" कर रहे हैं। जब आप ` http: // localhost: 8000 `पर जाते हैं ऐसा लगता है आप किसी वास्तविक वेबसाइट पर जाते हैं, - आप एक सर्वर से एक अनुरोध कर रहे हैं, जो तब आपके द्वारा मांगे गए पेज को वापस भेज देता है।
 
-If you put your `index.html` file on your web server, and then access it as `http://localhost:8000/index.html`, its **origin** is `http://localhost:8000`. If you also send your JSON file via the web server, it can be accessed at `http://localhost:8000/penalties.json` and so its **origin** is __also__ `http://localhost:8000`. This satisfies the same origin rule, and so we are able to access the JSON data in our JavaScript!
+यदि आप अपना ` index.html `फ़ाइल अपने वेब सर्वर पर डालते हैं, और फिर इसे ` http: // localhost: 8000 / index.htm` के रूप में एक्सेस करते हैं, इसका **origin ** ` http: // localhost: 8000 ` है। यदि आप अपनी JSON फाइल को वेब सर्वर के माध्यम से भी भेजते हैं, तो इसे ` http: // localhost: 8000 / penalties.json` पर एक्सेस किया जा सकता है। और इसलिए इसका ** origin ** __ भी __ ` http: // localhost: 8000 ` है। यह उसी मूल नियम को संतुष्ट करता है, और इसलिए हम अपने JavaScript में JSON डेटा तक पहुंचने में सक्षम हैं!
 
-Incidentally, some web servers offering JSON data are set up to send a special header allowing access from different origins. The server with the data used in this resource does not have this set up, so we downloaded the file and served it locally.
+संयोग से, JSON डेटा की पेशकश करने वाले कुछ वेब सर्वर एक विशेष हेडर भेजने के लिए अलग-अलग मूल से पहुंचने की अनुमति देते हैं। इस संसाधन में उपयोग किए गए डेटा वाले सर्वर में यह सेट-अप नहीं है, इसलिए हमने फ़ाइल डाउनलोड की और इसे स्थानीय रूप से सेवा दी।
 
 
