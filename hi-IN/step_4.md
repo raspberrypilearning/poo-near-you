@@ -1,12 +1,12 @@
-## Get a Google maps API key
+## Google Map एपीआई (API) Key प्राप्त करें
 
-Next, you'll need to create a Google Maps API key. An API (or Application Programming Interface) is a set of functions provided so that you can interact with another computer - in this case the Google Maps server. You need to have an **API key** to access it, so that Google knows who it has allowed to use its services.
+इसके बाद, आपको Google Map एपीआई(API) की कुंजी बनाने की आवश्यकता होगी। एक एपीआई (या एप्लिकेशन प्रोग्रामिंग इंटरफ़ेस) प्रदान किए गए कार्यों का एक सेट है, ताकि आप किसी अन्य कंप्यूटर के साथ बातचीत कर सकें - इस मामले में Google Map सर्वर। इसे एक्सेस करने के लिए आपके पास ** API key **होना आवश्यक है ताकि Google को पता हो कि उसने अपनी सेवाओं का उपयोग करने की अनुमति किसको दी है।
 
-- Open [this page](https://developers.google.com/maps/documentation/javascript/adding-a-google-map#step_3_get_an_api_key) and, under the heading "Step 3: Get an API key", follow the steps to obtain a Google Maps JavaScript API key.
+- Step 3: Get an API key" शीर्षक के तहत,[this page](https://developers.google.com/maps/documentation/javascript/adding-a-google-map#step_3_get_an_api_key)को खोलें और," Google Map JavaScript एपीआई कुंजी प्राप्त करने के लिए चरणो का पालन करें।
 
-  **Note - using the API is free but you will need a credit/debit card to complete the sign up.**
+  **नोट - एपीआई(API) का उपयोग करना नि: शुल्क है लेकिन साइन अप को पूरा करने के लिए आपको क्रेडिट / डेबिट कार्ड की आवश्यकता होगी।**
 
-- Go back to your `index.html` file and position your cursor just before the `</body>` tag. Paste in the code below:
+- अपने ` index.html `पर वापस जाएं `</body>`टैग के ठीक पहले अपने कर्सर को वहाँ पहुचाये। नीचे दिए गए कोड में पेस्ट करें :
 
     ```html
     <script async defer
@@ -14,5 +14,5 @@ Next, you'll need to create a Google Maps API key. An API (or Application Progra
     </script>
     ```
 
-- Locate the part in the code you just pasted which says `YOUR_API_KEY` and replace it with the API key you just generated, making sure there are no spaces between the key you paste in and the `=` and `&` characters on each side of it.
+- जिस कोड को आप पेस्ट करते हैं उसमें उस भाग का पता लगाएँ जो कहता है ` Your_API_KEY ` और इसे केवल आपके द्वारा बनाई गई API कुंजी से बदल दें, सुनिश्चित करें कि आपके द्वारा पेस्ट की गई कुंजी के बीच कोई रिक्त स्थान नहीं है और ` = ` और `&` इसके हर तरफ मौजूद है ।
 
