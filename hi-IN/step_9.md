@@ -1,38 +1,38 @@
-## Run a local web server
+## एक स्थानीय(local) वेब सर्वर चलाएं
 
-So far, you have learnt how to mark a location on a map by finding its latitude and longitude, and you know how to customise the marker as an emoji. The data file we looked at contains a lot of data though, and typing lots of things in would take a long time. Let's get the computer to automatically retrieve the data and plot it on the map for us!
+अब तक, आपने सीखा है कि किसी Map पर किसी स्थान को उसके अक्षांश और देशांतर को कैसे चिह्नित किया जाए, और आप जानते हैं कि मार्कर को इमोजी के रूप में कैसे अनुकूलित किया जाए। हमारे द्वारा देखी गई डेटा फ़ाइल में बहुत अधिक डेटा है, और बहुत सी चीजें टाइप करने में लंबा समय लगता है। चलो कंप्यूटर को डेटा को स्वचालित रूप से प्राप्त करने और इसे हमारे लिए Map पर प्लॉट करने के लिए इस्तेमाल करते है!
 
-The open data we found was in a format called JSON (JavaScript Object Notation) which is easy to read and work with using JavaScript. You may find many other open data sources as JSON, and you can access these using the methods we will show you. To be able to read the data automatically, you will need to run a web server on your computer. Fortunately, as long as you have Python 3 installed, you already have the capability to run a very basic web server!
+हमें जो मुफ्त डेटा मिला, वह JSON (JavaScript ऑब्जेक्ट नोटेशन) नामक एक प्रारूप में था, जो JavaScript का उपयोग करने के साथ पढ़ने और काम करने में आसान है। आपको JSON के रूप में कई अन्य मुफ्त डेटा स्रोत(Sources) मिल सकते हैं, और इन का उपयोग इन तरीकों से कर सकते हैं डेटा को स्वचालित रूप से पढ़ने के लिए, आपको अपने कंप्यूटर पर एक वेब सर्वर चलाने की आवश्यकता होगी। सौभाग्य से, जब तक आपके पास Python 3 स्थापित है, आपके पास पहले से ही एक बहुत ही मूल वेब सर्वर चलाने की क्षमता है!
 
-**On some networks (for example in schools) the use of the command prompt and certain ports will be restricted, so you may need to ask for support from your network manager to complete this part of the resource.**
+**कुछ नेटवर्क पर (उदाहरण के लिए स्कूलों में) कमांड प्रॉम्प्ट(command prompt) और कुछ ports का उपयोग प्रतिबंधित होगा, इसलिए आपको संसाधन के इस हिस्से को पूरा करने के लिए अपने नेटवर्क प्रबंधक से समर्थन मांगना पड़ सकता है।**
 
-### Running a web server
+### वेब सर्वर चलाना
 
-- Open a terminal (Raspberry Pi, Mac) or Command Prompt (Windows):
+- एक टर्मिनल खोलें (Raspberry Pi, Mac) या कमांड प्रॉम्प्ट(command prompt) (Windows):
 
     **Windows**
 
-    ![Open a command prompt](images/command-prompt.png)
+    ![Command prompt खोलें](images/command-prompt.png)
 
     **Raspberry Pi**
 
-    ![Open a terminal on Raspberry Pi](images/terminal.png)
+    ![Raspberry Pi पर एक टर्मिनल खोलें](images/terminal.png)
 
     **Mac**
 
-    ![Open a terminal on Mac](images/mac-terminal.png)
+    ![Mac पर एक टर्मिनल खोलें](images/mac-terminal.png)
 
 
-- Change to the directory your web page is saved in by typing `cd` followed by a space, then the path to the directory. An example directory is shown, but you may have saved your web page in a different location, so make sure you use the path to the directory you used. Be careful - Windows uses ``\` between directories, but Mac and Raspberry Pi both use``/`.
+- अपने वेब पेज को डायरेक्टरी में बदलें ` cd` टाइप करके एक स्थान के बाद, फिर directory का मार्ग। एक उदाहरण निर्देशिका(directory) दिखाई गई है, लेकिन आपने अपने वेब पेज को किसी भिन्न स्थान पर सहेजा होगा, इसलिए सुनिश्चित करें कि आपने जिस निर्देशिका(directory) का उपयोग किया है, उसका उपयोग करें। सावधान रहें - Windows निर्देशिकाओं(directories) के बीच `` \ `का उपयोग करता है, लेकिन Mac और Raspberry Pi दोनों / `का उपयोग करते हैं ``।
 
     **Windows**
 
-    ![Change to the directory](images/cd-to-directory.png)
+    ![निर्देशिका(directory) को बदलें](images/cd-to-directory.png)
 
     **Raspberry Pi**
 
     ```bash
-    cd /home/pi/googlemaps
+    cd / home / pi / googlemaps
     ```
 
     **Mac**
@@ -41,7 +41,7 @@ The open data we found was in a format called JSON (JavaScript Object Notation) 
     cd Documents/googlemaps
     ```
 
-- Type the following command to start the web server, which will serve files from the directory you were in when you started it.
+- वेब सर्वर को शुरू करने के लिए निम्न कमांड टाइप करें, जो उस निर्देशिका(directory) से फाइलें प्राप्त करेगा जो आपने इसे शुरू करते समय किया था।
 
     **Windows**
 
@@ -52,13 +52,13 @@ The open data we found was in a format called JSON (JavaScript Object Notation) 
     **Raspberry Pi and Mac**
 
     ```bash
-    python3 -m http.server
+    python -m http.server
     ```
 
-- You should see a message that will be similar to this - `Serving HTTP on 0.0.0.0 port 8000 ...`
+- आपको एक संदेश देखना चाहिए जो इसके समान होगा - ` 0.0.0.0 पोर्ट 8000 पर HTTP सर्विंग ... `
 
-- Open up a web browser. In the address bar, type in `http://localhost:8000/index.html` and press enter. You should see your map webpage appear, but this time it is being __served__ to you by the Python web server!
+- एक वेब ब्राउज़र खोलें। पता(address) बार में, टाइप करें ` http: // localhost: 8000 / index.html ` और एंटर दबाएं। आपको अपना map webpage दिखाई देना चाहिए, लेकिन इस बार इसे __ परोस दिया जा रहा है __ Python वेब सर्वर द्वारा आप के लिए!
 
-    ![Served page with map](images/local-server-map.png)
+    ![Map के पेज को Served करे](images/local-server-map.png)
 
-You may be curious as to why it is necessary to run a web server. Why can't we just carry on looking at the web page as we did in worksheet 1? The explanation for why this is necessary is at the end of this worksheet.
+आप उत्सुक हो सकते हैं कि वेब सर्वर चलाना क्यों आवश्यक है। जैसा कि हमने वर्कशीट 1 में किया था, हम सिर्फ वेब पेज को क्यों नहीं देख सकते? यह क्यों आवश्यक है, इसके लिए स्पष्टीकरण इस वर्कशीट के अंत में है।
