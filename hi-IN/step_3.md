@@ -1,24 +1,24 @@
-## Create a web page
+## एक वेबपेज बनाएँ
 
-- Open up a blank file in your chosen text editor and save the file as follows:
+- अपने चुने हुए टेक्स्ट एडिटर में एक खाली फाइल खोलें और फाइल को ऐसे सेव (save) करें:
 
- -  If you're using **Notepad** on Windows, type the filename in as `index.html` and change the drop-down for the **Save as** type to **All files**.
+ -  यदि आप Windows पर** Notepad** का उपयोग कर रहे हैं, तो फ़ाइल का नाम `index.html` टाइप करें और **Save as ** करके ड्रॉप-डाउन में **All files** चुने।
 
-  ![Save as HTML using Notepad](images/save-as-html-notepad.png)
+  ![नोटपैड का उपयोग करके HTML के रूप में सेव करें](images/save-as-html-notepad.png)
 
- - If you're using **TextEdit** on Mac OS, open a new file, then select **Format** > **Make Plain Text**.
+ - यदि आप Mac OS पर **TextEdit** का उपयोग कर रहे हैं, तो एक नई फ़ाइल खोलें, फिर **Format** > **Make Plain Text** को चुनें।
 
-  ![Mac make plain text](images/mac-make-plaintext.png)
+  ![Mac सादा टेक्स्ट बनाता है](images/mac-make-plaintext.png)
 
-  Make sure you save the file as `index.html`.
+  सुनिश्चित करें कि आपने फ़ाइल को `index.html` के नाम से सेव किया है।
 
-  ![Mac saving as HTML](images/mac-name-file.png)
+  ![Mac का HTML के रूप में सेव करना](images/mac-name-file.png)
 
- - If you're using **Nano** on a Raspberry Pi, open a terminal window, move to the directory in which you wish to create your web page, and type `nano index.html`.
+ - यदि आप Raspberry Pi पर** Nano** का उपयोग कर रहे हैं, तो एक टर्मिनल विंडो खोलें, उस डायरेक्टरी में जाएं जिसमें आप अपना वेबपेज बनाना चाहते हैं, और `nano index.html`टाइप करें।
 
-  ![Nano creating HTML](images/pi-html-nano.png)
+  ![Nano का HTML बनाना](images/pi-html-nano.png)
 
-2. This HTML code gives you the basic structure of a page. Copy and paste the code into the file you created, then save the file.
+2. नीचे दिया गया HTML कोड आपको एक पेज की मूल संरचना(structure) देता है: आपके द्वारा बनाई गई फ़ाइल में ये कोड कॉपी और पेस्ट (copy & paste) करें, फिर फ़ाइल को सेव (save) करलें।
 
   ```html
   <html>
@@ -26,17 +26,17 @@
     <title>My map</title>
   </head>
   <body>
-    My map will go here
+  My map will go here
   </body>
   </html>
   ```
 
-3. Go to the folder where you saved your HTML file. Open the file with your internet browser as well. Now you'll have the same file open in your text editor and in your browser at the same time.
+3. उस फ़ोल्डर पर जाएं जहां आपने अपना वेबपेज सेव किया है। फ़ाइल को अपने इंटरनेट ब्राउज़र के साथ भी खोलें। अब आपके पास एक ही फाइल आपके टेक्स्ट एडिटर में और एक ही समय में आपके ब्राउज़र में खुली होगी।
 
-  On Windows, you may need to right-click the file, choose **Open with**, and then select your internet browser.
+  अगर आपके पास windows है तो आपको फ़ाइल पे राइट-क्लिक करने की आवश्यकता हो सकती है| उसके बाद **Open with** पर क्लिक करे, और फिर अपना इंटरनेट ब्राउज़र चुनें।
 
-  ![Open with browser](images/open-with-browser.png)
+  ![ब्राउज़र से खोलें](images/open-with-browser.png)
 
-  Whenever you change the code in your text editor, save it and then press the refresh button on your browser to see the page update.
+  जब भी आप अपने टेक्स्ट एडिटर में कोड बदलते हैं, तो उसे सेव करें और फिर अपडेट किए गए पेज को देखने के लिए अपने ब्राउज़र पर रिफ्रेश (refresh) बटन दबाएं।
 
 
