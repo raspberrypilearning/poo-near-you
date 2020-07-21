@@ -1,16 +1,16 @@
-## Adding more data
+## अधिक डेटा जोड़ना
 
-- Now that we have access to all the JSON data, we can also plot some of the other data at each data point. Locate the line `icon: emoji`. Add a comma at the end of the line so that we can add another parameter on the line below.
+- अब हमारे पास सभी JSON डेटा तक पहुंच है, हम प्रत्येक डेटा बिंदु पर कुछ अन्य डेटा भी प्लॉट कर सकते हैं। `icon: emoji`रेखा का पता लगाएँ । लाइन के अंत में एक अल्पविराम(comma) जोड़ें ताकि हम नीचे पर लाइन एक और पैरामीटर जोड़ सकें।
 
-- Add a line below to plot the description of the penalty on the data marker:
+- डेटा मार्कर पर जुर्माने का विवरण देने के लिए नीचे एक पंक्ति जोड़ें:
 
     ```JavaScript
     icon: emoji,
     title: data[i]["Contravention_Description"]
     ```
 
-- Refresh your map. When you hover your mouse over one of the icons, you will see the type of penalty appear in a tooltip.
+- अपने नक्शे को ताज़ा(Refresh) करें। जब आप अपने माउस को किसी एक आइकॉन पर रखते हैं, तो आप देखेंगे कि टूलटिप में किस प्रकार का पेनल्टी है।
 
-    ![Leaving litter](images/leaving-litter.png)
+    ![कूड़े को छोड़ना](images/leaving-litter.png)
 
 
