@@ -1,11 +1,11 @@
-## Using open data
+## मुफ्त डेटा का उपयोग
 
-In this resource you will use the Google maps API to put open data onto a map using JavaScript.
+इस संसाधन में आप JavaScript का उपयोग करते हुए मुफ्त डेटा को Map पर रखने के लिए Google Map API का उपयोग करेंगे।
 
-Open data is data that is made available for public use, for free and without restrictions. All sorts of organisations publish open data, including governments, charities and companies. You can find open data on a wide variety of topics using a search engine.
+मुफ्त डेटा वह डेटा है जिसे सार्वजनिक उपयोग के लिए, मुफ्त और बिना प्रतिबंध के उपलब्ध कराया जाता है। सभी प्रकार के संगठन मुफ्त डेटा प्रकाशित करते हैं, जिसमें सरकार, दानी संस्था और कंपनियां शामिल हैं। आप search engine का उपयोग करके विभिन्न प्रकार के विषयों पर मुफ्त डेटा पा सकते हैं।
 
-Lots of cities publish their own open data. For this resource we are going to use some open data published by the city of Nottingham, UK, which helpfully tells us all of the places where people got a fine for leaving dog poo!
+बहुत से शहर अपना खुद का मुफ्त डेटा प्रकाशित करते हैं। इस संसाधन के लिए, हम ब्रिटेन के नॉटिंघम शहर द्वारा प्रकाशित कुछ मुफ्त आंकड़ों का उपयोग करने जा रहे हैं, जो हमें उन सभी स्थानों के बारे में बताने में मदद करता है, जहाँ लोगों को कुत्ते की पू छोड़ने के लिए जुर्माना मिलता है!
 
-It is important to respect the license specified by the publisher of the data, and to use the data only for things allowed by the license. For us to be allowed to use this data, Nottingham City Council asks us to provide an acknowledgement to let people know where the data originally came from, and a link to the license, like this:
+डेटा के प्रकाशक द्वारा specified लाइसेंस का सम्मान करना और केवल लाइसेंस द्वारा अनुमत चीजों के लिए डेटा का उपयोग करना महत्वपूर्ण है। इस डेटा का उपयोग करने की अनुमति देने के लिए, नॉटिंघम सिटी काउंसिल ने हमें लोगों को यह बताने के लिए एक स्वीकृति प्रदान करने के लिए कहा कि डेटा मूल रूप से कहां से आया था, और लाइसेंस का एक लिंक, जैसे:
 
-[Fixed Penalty Notices](http://www.opendatanottingham.org.uk/dataset.aspx?id=124), Nottingham City Council, 4th July 2016, licensed under the [Open Government Licence](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)
+[ Fixed Penalty Notices](http://www.opendatanottingham.org.uk/dataset.aspx?id=124), नॉटिंघम सिटी काउंसिल, 4 जुलाई 2016, [ Open Government Licence](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)के तहत लाइसेंस प्राप्त किया
