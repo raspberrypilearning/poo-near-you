@@ -1,0 +1,33 @@
+---
+title: आपके पास poo
+hero_image: images/banner.png
+description: इस संसाधन में आप JavaScript का उपयोग करते हुए मुफ्त डेटा को map पर रखने के लिए Google मानचित्र API का उपयोग करेंगे।
+original_url: https://raspberrypi.org/learning/poo-near-you
+theme: violet
+duration: 2
+listed: true
+ingredient: false
+copyedit: true
+curriculum: 3, design-0, programming-3, phys-comp-1, manufacture-0, community-0
+interests: ''
+technologies: html-css-javascript
+site_areas: projects
+hardware: ''
+software: html-css-javascript
+version: 3
+last_tested: 2018-05-22
+steps:
+  - title: परिचय
+  - title: मुफ्त डेटा का उपयोग
+  - title: एक वेबपेज बनाएँ
+  - title: Google map एपीआई (API) Key प्राप्त करें
+  - title: एक चौड़ाई और ढूँढना
+  - title: अपने वेब पेज पर Map जोड़ें
+  - title: एक मार्कर सेट करें
+  - title: "चुनौती: अधिक स्टाइलिंग"
+  - title: एक local वेब सर्वर चलाएं
+  - title: JSON डेटा पढ़ें और इसे map पर प्लॉट करें
+  - title: अधिक डेटा जोड़ना
+  - title: विभिन्न इमोजी का उपयोग करना
+  - title: हमें वेब सर्वर चलाने की आवश्यकता क्यों थी?
+  - title: "चुनौती: अपना खुद का डेटा प्लॉट करना"

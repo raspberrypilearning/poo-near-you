@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        #map {
+            width: 100%;
+            height: 400px;
+            background-color: grey;
+        }
+        </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    </head>
+    <body>
+        मेरा Google का नक्शा
+        <div id="map"></div>
+
+        <script>
+        alert("Don't forget to add your own API key to this script, or it won't work properly!");
+        // Set up map
+        function initMap() {
+             // Where the map is centred (look up on google maps)
+            var Nottingham = {lat: 52.961447, lng: -1.158390};
+
+            // Create map object, level of zoom
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 10,
+              center: Nottingham
+            });
+
+            var geocoder = new google.maps.Geocoder();
+            var data_file = "http://localhost:8000/penalties.json";
+
+            // Read the data file
+            $.getJSON(data_file, function(data){
+                $.each(data, function(i){
+                    var incident_location =  data[i]["Street"] + ", Nottingham, UK";
+
+                    if( i == 10 ){ return false; }
+
+                    geocoder.geocode( { 'address': incident_location }, function(results, status) {
+                        var emoji = 'poop.png';
+
+                        if(data[i]["Contravention_Description"].toLowerCase() == "leaving litter"){
+                            emoji = 'litter.png';
+                        }
+
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: results[0].geometry.location,
+                            animation: google.maps.Animation.DROP,
+                            icon: emoji,
+                            title: data[i]["Contravention_Description"]
+                        });
+                    });
+                });
+            });
+
+
+        }
+        </script>
+
+        <!-- Don't forget to add your own API key here otherwise this won't work -->
+        <script async defer
+ src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+        </script>
+
+    </body>
+</html>
