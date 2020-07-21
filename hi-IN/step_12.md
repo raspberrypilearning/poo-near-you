@@ -1,10 +1,10 @@
-## Using different emojis
+## विभिन्न इमोजी का उपयोग करना
 
-You will see that lots of the incidents are not to do with dog poo - they are actually to do with dropping litter. Let's add a different emoji depending on the type of incident.
+आप देखेंगे कि बहुत सारी घटनाएं कुत्ते के पू से नहीं होती हैं - वे वास्तव में कूड़े को छोड़ने के साथ होती हैं। आइए घटना के प्रकार के आधार पर एक अलग इमोजी जोड़ें।
 
-- Save a suitable emoji image to mark litter being dropped. The emoji should be saved as `litter.png` and it should be saved into the same folder as your webpage. If you want to, you can use [this one](resources/litter.png) from [Wikimedia Commons](https://commons.wikimedia.org/wiki/Emoji).
+- कूड़े को गिराए जाने के लिए एक उपयुक्त इमोजी सहेजें। इमोजी को `litter.png` के रूप में सेव़ करना चाहिए और इसे आपके वेबपेज के समान फ़ोल्डर में सेव़ करना चाहिए। यदि आप चाहते हैं, तो आप[ इस का](resources/litter.png) उपयोग कर सकते हैं [ Wikimedia Commons ](https://commons.wikimedia.org/wiki/Emoji)से ।
 
-- Add an 'if' statement to check the type of incident. If it is litter, change the variable to use the litter emoji. Otherwise, we will stick with the default poop emoji.
+- घटना के प्रकार की जाँच करने के लिए एक 'if' स्टेटमेंट जोड़ें। यदि यह कूड़े है, तो कूड़े का इमोजी का उपयोग करने के लिए variable को बदलें। अन्यथा, हम डिफ़ॉल्ट पूप इमोजी के साथ चिपके रहेंगे।
 
     ```javascript
     if(data[i]["Contravention_Description"].toLowerCase() == "leaving litter"){
@@ -12,11 +12,11 @@ You will see that lots of the incidents are not to do with dog poo - they are ac
     }
     ```
 
-    We have converted the `Contravention_Description` to lowercase because some of the descriptions in the data say "Leaving litter" and some say "Leaving Litter". Although a human can understand that these both mean the same thing, the computer thinks they are different. We convert the description to all lowercase and then compare it to the phrase "leaving litter" in all lowercase, so that capitalisation doesn't matter.
+    हमने ` Contravention_Description ` को lowercase में परिवर्तित कर दिया है क्योंकि डेटा में कुछ विवरण "Leaving litter" कहते हैं और कुछ "Leaving Litter" कहते हैं। हालांकि एक मानव समझ सकता है कि इन दोनों का मतलब एक ही है, कंप्यूटर सोचता है कि वे अलग हैं। हम विवरण को सभी lowercaseमें परिवर्तित करते हैं और फिर इसकी तुलना "leaving litter"सभी लोअरकेस से करते हैं, ताकि पूंजीकरण से कोई फर्क न पड़े।
 
-- Save your code, then go back to the web browser and refresh the page. You should see two different types of emoji to show different types of incident.
+- अपना कोड सहेजें(Save करे), अपने ब्राउज़र पर वापस जाएं और पेज को रीफ़्रेश करें। विभिन्न प्रकार की घटनाओं को दिखाने के लिए आपको दो अलग-अलग प्रकार के इमोजी दिखने चाहिए।
 
-    ![Leaving litter](images/multi-emojis.png)
+    ![कूड़े को छोड़ना](images/multi-emojis.png)
 
-- The finished code is [here](https://raw.githubusercontent.com/raspberrypilearning/poo-near-you/master/code/worksheet2.html) for you to have a look at.
+- कोड [यहां ](https://raw.githubusercontent.com/raspberrypilearning/poo-near-you/master/code/worksheet2.html) समाप्त है आपके देखने के लिए ।
 
