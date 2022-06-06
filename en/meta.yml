@@ -19,9 +19,10 @@ version: 3
 last_tested: 2018-05-22
 steps:
 - title: Introduction
-  completion: engaged
 - title: Using open data
 - title: Create a web page
+  completion:
+  - engaged
 - title: Get a Google maps API key
 - title: Finding a latitude and longitude
 - title: Add the map to your web page
@@ -32,5 +33,6 @@ steps:
 - title: Adding more data
 - title: Using different emojis
 - title: Why did we need to run a web server?
-  completion: internal
+  completion:
+  - internal
 - title: 'Challenge: Plotting your own data'
