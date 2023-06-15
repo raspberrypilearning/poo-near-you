@@ -4,7 +4,7 @@ In this resource you will use JavaScript and the Google Maps API to put open dat
 
 ### What you will make
 
-![PooMap](images/poomap.gif)
+![Animation showing poo emoji markers being placed on Google Maps](images/poomap.gif)
 
 --- collapse ---
 ---
