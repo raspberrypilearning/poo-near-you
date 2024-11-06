@@ -6,7 +6,7 @@ description: In this resource you will use the Google maps API to put open data 
 original_url: https://raspberrypi.org/learning/poo-near-you
 theme: violet
 duration: 2
-listed: true
+listed: false
 ingredient: false
 copyedit: true
 curriculum: 3, design-0, programming-3, phys-comp-1, manufacture-0, community-0
